@@ -4,7 +4,6 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { ThemeProvider } from '../components/ui/theme-provider';
-import { ThemeToggle } from '../components/ui/theme-toggle';
 import { Logo } from '../components/ui/logo';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ToastContainer, toast } from 'react-toastify';
@@ -112,7 +111,6 @@ function ContactPage() {
               
               {/* Desktop Actions */}
               <div className="hidden md:flex items-center space-x-4">
-                <ThemeToggle />
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}

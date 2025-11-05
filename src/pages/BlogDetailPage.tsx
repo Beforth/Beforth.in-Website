@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, User, ArrowLeft, Share2, Bookmark, Heart, MessageCircle, Tag, Linkedin, Twitter, Facebook, Instagram, Youtube, Building2, TrendingUp, BookOpen, Award, Globe, BarChart3, Mail, FileText, ExternalLink, Download, HeadphonesIcon } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Share2, Bookmark, Heart, MessageCircle } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
-import { ThemeToggle } from '../components/ui/theme-toggle';
 import { Logo } from '../components/ui/logo';
 import { NavLink } from '../components/ui/nav-link';
 import { Footer } from '../components/ui/footer';
@@ -310,7 +309,7 @@ function BlogDetailPage() {
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  const article = blogArticles[parseInt(id || '1')];
+  const article = blogArticles[parseInt(id || '1') as keyof typeof blogArticles];
 
   if (!article) {
     return (
@@ -373,7 +372,6 @@ function BlogDetailPage() {
               </nav>
               
               <div className="hidden md:flex items-center space-x-4">
-                <ThemeToggle />
                 <Button size="sm">Get Started</Button>
               </div>
 
@@ -481,7 +479,7 @@ function BlogDetailPage() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
-                {article.tags.map((tag, index) => (
+                {article.tags.map((tag: string, index: number) => (
                   <span
                     key={index}
                     className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-sm"

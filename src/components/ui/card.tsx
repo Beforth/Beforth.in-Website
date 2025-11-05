@@ -5,7 +5,12 @@ import { cn } from "../../lib/utils"
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, onDrag, onDragStart, onDragEnd, onAnimationStart, onAnimationEnd, ...props }, ref) => (
+>(({ className, ...props }, ref) => {
+  // Destructure to remove conflicting props between React and Framer Motion
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { onDrag, onDragStart, onDragEnd, onAnimationStart, onAnimationEnd, ...rest } = props;
+  
+  return (
   <motion.div
     ref={ref}
     className={cn(
@@ -14,7 +19,7 @@ const Card = React.forwardRef<
     )}
     whileHover={{ y: -8, scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
-    {...props}
+    {...rest}
   >
     {/* Gradient overlay on hover */}
     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -22,7 +27,8 @@ const Card = React.forwardRef<
     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     <div className="relative z-10">{props.children}</div>
   </motion.div>
-))
+  );
+})
 Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<

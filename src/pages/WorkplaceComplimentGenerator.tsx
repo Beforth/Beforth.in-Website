@@ -6,7 +6,6 @@ import { NavLink } from '../components/ui/nav-link';
 import { Footer } from '../components/ui/footer';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
-import { ThemeToggle } from '../components/ui/theme-toggle';
 import { Logo } from '../components/ui/logo';
 import { 
   Heart, 
@@ -517,7 +516,7 @@ const WorkplaceComplimentGenerator: React.FC = () => {
               
               {/* Desktop Actions */}
               <div className="hidden md:flex items-center space-x-4">
-                <ThemeToggle />
+
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}

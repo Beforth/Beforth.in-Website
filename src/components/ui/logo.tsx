@@ -1,9 +1,7 @@
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
 export function Logo() {
-  const { theme } = useTheme();
-  const logoSrc = theme === 'dark' ? "/images/befu-white.png" : "/images/befu.png";
+  const logoSrc = "/images/befu.png"; // Always use light mode logo
   
   return (
     <motion.img 

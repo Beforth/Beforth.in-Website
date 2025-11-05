@@ -5,7 +5,6 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
-import { ThemeToggle } from '../components/ui/theme-toggle';
 import { ServiceModal } from '../components/ui/service-modal';
 import { Logo } from '../components/ui/logo';
 import { NavLink } from '../components/ui/nav-link';
@@ -128,14 +127,14 @@ const stats = [
 ];
 
 const behindTheScenes = [
-  { text: "847 cups of chai consumed during brainstorming sessions" },
-  { text: "23 'quick meetings' that turned into breakthrough solutions" },
-  { text: "156 'just one more thing' moments that changed everything" },
-  { text: "2,341 lines of code written at 2 AM (powered by passion, not just coffee)" },
-  { text: "67 'this is impossible' moments proven wrong" },
-  { text: "1,892 Slack messages and every emoji worth it" },
-  { text: "34 demo versions before the perfect one" },
-  { text: "∞ dedication to making your business better" }
+  { text: "Countless cups of chai fueling late-night brainstorming sessions" },
+  { text: "Quick meetings that turned into breakthrough solutions" },
+  { text: "'Just one more thing' moments that changed everything" },
+  { text: "Lines of code written at 2 AM, powered by passion" },
+  { text: "'This is impossible' moments we proved wrong" },
+  { text: "Slack messages and every emoji that made it worth it" },
+  { text: "Demo versions refined until we got it perfect" },
+  { text: "Endless dedication to making your business better" }
 ];
 
 const processSteps = [
@@ -267,7 +266,6 @@ function HomePage() {
               </nav>
               
               <div className="hidden md:flex items-center space-x-4">
-                <ThemeToggle />
                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
                   <Button size="sm" asChild>
                     <a href="/contact">Get Started</a>
@@ -281,7 +279,7 @@ function HomePage() {
         </header>
 
         {/* Hero Section - Enhanced Typography */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/20 overflow-hidden">
+        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-stone-50 via-blue-50/20 to-purple-50/10 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -367,7 +365,7 @@ function HomePage() {
         </section>
 
         {/* Animated Stats Section */}
-        <section className="py-12 md:py-16 bg-muted/30">
+        <section className="py-12 md:py-16 bg-stone-100/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 text-center">
               {stats.map((stat, index) => {
@@ -393,7 +391,7 @@ function HomePage() {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 md:py-20 bg-background">
+        <section className="py-16 md:py-20 bg-stone-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
@@ -432,7 +430,7 @@ function HomePage() {
         </section>
 
         {/* Services Preview Section */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section className="py-16 md:py-20 bg-amber-50/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
@@ -555,19 +553,25 @@ function HomePage() {
           </div>
         </section>
 
-        {/* Behind the Scenes Section - Inspired by Untold */}
-        <section className="py-16 md:py-20 bg-muted/30 overflow-hidden">
+        {/* Behind the Scenes Section */}
+        <section className="py-16 md:py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+            <motion.div 
+              className="text-center mb-12 md:mb-16" 
+              initial={{ opacity: 0, y: 20 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.8 }} 
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
-                Behind the <span className="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">scenes.</span>
+                Behind the <span className="font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">scenes.</span>
               </h2>
               <p className="text-lg sm:text-xl font-light text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Our untold stories of dedication, creativity, and passion.
+                The real story of building something meaningful.
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {behindTheScenes.map((item, index) => (
                 <motion.div
                   key={index}
@@ -577,14 +581,10 @@ function HomePage() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <Card className="p-6 hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 bg-gradient-to-br from-white via-purple-50/30 to-pink-50/20 h-full">
-                    <div className="flex items-start space-x-4">
-                      <div className="text-3xl md:text-4xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors">
-                        •
-                      </div>
-                      <p className="text-muted-foreground text-sm md:text-base leading-relaxed pt-1">{item.text}</p>
-                    </div>
-                  </Card>
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 group-hover:scale-150 transition-transform"></div>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed group-hover:text-foreground transition-colors">{item.text}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -592,7 +592,7 @@ function HomePage() {
         </section>
 
         {/* Startup Focus Section */}
-        <section className="py-16 md:py-20 bg-background">
+        <section className="py-16 md:py-20 bg-orange-50/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">

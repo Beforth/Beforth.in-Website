@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./components/ui/theme-provider";
 import { Loading } from "./components/ui/loading";
 import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
@@ -36,8 +35,7 @@ function App() {
   }
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <Router>
+    <Router>
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -67,7 +65,6 @@ function App() {
                 <Route path="/support" element={<div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Support Center Page - Coming Soon</h1></div>} />
         </Routes>
       </Router>
-    </ThemeProvider>
   );
 }
 

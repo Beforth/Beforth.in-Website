@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './button';
-import { ThemeToggle } from './theme-toggle';
 
 interface MobileMenuProps {
   navItems: {
@@ -24,7 +23,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ navItems }) => {
   return (
     <div className="md:hidden bg-background">
       <div className="flex items-center space-x-2 bg-background">
-        <ThemeToggle />
         <Button
           variant="ghost"
           size="icon"

@@ -3,7 +3,6 @@ import { Linkedin, Twitter, Mail } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
-import { ThemeToggle } from '../components/ui/theme-toggle';
 import { Logo } from '../components/ui/logo';
 import { NavLink } from '../components/ui/nav-link';
 import { Footer } from '../components/ui/footer';
@@ -23,21 +22,21 @@ const teamMembers = [
     name: "Vivek Zope",
     role: "CEO",
     bio: "Manages all the things with visionary leadership and strategic direction.",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Vivek&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf",
+    image: "https://ui-avatars.com/api/?name=Vivek+Zope&size=200&background=3b82f6&color=fff&bold=true&format=svg",
     linkedin: "#"
   },
   {
     name: "Ritesh Mahale",
     role: "CTO",
     bio: "Expert in Backend Development and system architecture with deep technical expertise.",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ritesh&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf",
+    image: "https://ui-avatars.com/api/?name=Ritesh+Mahale&size=200&background=6366f1&color=fff&bold=true&format=svg",
     linkedin: "#"
   },
   {
     name: "Aditya Badgujar",
     role: "COO",
     bio: "Research and Development expert specializing in Frappe framework and innovation.",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aditya&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf",
+    image: "https://ui-avatars.com/api/?name=Aditya+Badgujar&size=200&background=8b5cf6&color=fff&bold=true&format=svg",
     linkedin: "#"
   },
 ];
@@ -75,7 +74,6 @@ function TeamPage() {
               </nav>
               
               <div className="hidden md:flex items-center space-x-4">
-                <ThemeToggle />
                 <Button size="sm">Get Started</Button>
               </div>
 
