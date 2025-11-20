@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Users, BarChart3, Shield, Clock, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { DoodleIcon } from '../components/ui/doodle-icon';
 import { BentoGrid, BentoGridItem } from '../components/ui/bento-grid';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
@@ -25,7 +26,7 @@ const services = [
     id: 'hrms-implementation',
     title: "HRMS Implementation",
     description: "Comprehensive HRMS solution with extensive features for complete workforce management, like our implementation for Aureole Group.",
-    icon: <Users className="h-8 w-8" />,
+    icon: <DoodleIcon name="interface/user.svg" className="h-8 w-8" />,
     className: "md:col-span-2",
     demoUrl: "https://hrms.aureolegroup.com/login",
     header: (
@@ -34,7 +35,7 @@ const services = [
         <div className="absolute top-4 right-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl"></div>
         <div className="absolute bottom-2 left-4 w-12 h-12 bg-indigo-500/20 rounded-full blur-lg"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Users className="w-8 h-8 text-blue-500/40" />
+          <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-blue-500/40" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       </div>
@@ -69,7 +70,7 @@ const services = [
     id: '4form-crm',
     title: "4form CRM",
     description: "Simple and effective CRM with mass email capabilities and built-in form/data collection support.",
-    icon: <BarChart3 className="h-8 w-8" />,
+    icon: <DoodleIcon name="interface/analytics.svg" className="h-8 w-8" />,
     demoUrl: "https://4form.beforth.in/",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-emerald-50/50 to-green-100/50 dark:from-emerald-950/30 dark:to-green-900/30 relative overflow-hidden">
@@ -77,7 +78,7 @@ const services = [
         <div className="absolute top-3 right-6 w-20 h-20 bg-emerald-500/20 rounded-full blur-xl"></div>
         <div className="absolute bottom-4 left-2 w-14 h-14 bg-green-500/20 rounded-full blur-lg"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <BarChart3 className="w-8 h-8 text-emerald-500/40" />
+          <DoodleIcon name="interface/analytics.svg" className="w-8 h-8 text-emerald-500/40" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(16,185,129,0.1),transparent_50%)]"></div>
         <div className="absolute top-2 left-2 w-2 h-2 bg-emerald-400/60 rounded-full"></div>
@@ -114,14 +115,14 @@ const services = [
     id: 'integration',
     title: "Custom Integration Services",
     description: "Integrate our HRMS and CRM solutions with your existing business systems for seamless operations.",
-    icon: <Shield className="h-8 w-8" />,
+    icon: <DoodleIcon name="interface/shield.svg" className="h-8 w-8" />,
     header: (
       <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-purple-50/50 to-violet-100/50 dark:from-purple-950/30 dark:to-violet-900/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-violet-600/10"></div>
         <div className="absolute top-2 right-2 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl"></div>
         <div className="absolute bottom-1 left-1 w-16 h-16 bg-violet-500/20 rounded-full blur-xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Shield className="w-8 h-8 text-purple-500/40" />
+          <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-purple-500/40" />
         </div>
         <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(147,51,234,0.1),transparent_120deg,rgba(139,92,246,0.1),transparent_240deg)]"></div>
         <div className="absolute top-4 left-4 w-1 h-8 bg-purple-400/30 rounded-full transform rotate-45"></div>
@@ -157,7 +158,7 @@ const services = [
     id: 'support',
     title: "Training & Support",
     description: "Complete training and 24/7 support to ensure your team gets the most out of our solutions.",
-    icon: <Clock className="h-8 w-8" />,
+    icon: <DoodleIcon name="interface/clock.svg" className="h-8 w-8" />,
     className: "md:col-span-2",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-orange-50/50 to-red-100/50 dark:from-orange-950/30 dark:to-red-900/30 relative overflow-hidden">
@@ -165,7 +166,7 @@ const services = [
         <div className="absolute top-1 right-1 w-28 h-28 bg-orange-500/20 rounded-full blur-2xl"></div>
         <div className="absolute bottom-2 left-3 w-18 h-18 bg-red-500/20 rounded-full blur-xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Clock className="w-8 h-8 text-orange-500/40" />
+          <DoodleIcon name="interface/clock.svg" className="w-8 h-8 text-orange-500/40" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.1),transparent_50%)]"></div>
         <div className="absolute top-3 left-6 w-3 h-3 bg-orange-400/50 rounded-full animate-pulse"></div>

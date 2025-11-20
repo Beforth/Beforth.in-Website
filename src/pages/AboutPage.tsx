@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Users, Shield, TrendingUp, Award, Globe, HeadphonesIcon } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { DoodleIcon } from '../components/ui/doodle-icon';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
 import { Logo } from '../components/ui/logo';
@@ -109,12 +109,16 @@ function AboutPage() {
                 {
                   title: "Our Mission",
                   description: "To democratize enterprise-grade HR and CRM solutions through modern technology, making them accessible and affordable for businesses of all sizes.",
-                  gradient: "from-blue-600 to-purple-600"
+                  gradient: "from-blue-600 to-purple-600",
+                  icon: "interface/target.svg",
+                  iconColor: "text-blue-600"
                 },
                 {
                   title: "Our Vision",
                   description: "To become the leading implementation partner, known for innovation, cost-effectiveness, and exceptional client success in HR and CRM transformations.",
-                  gradient: "from-green-600 to-blue-600"
+                  gradient: "from-green-600 to-blue-600",
+                  icon: "interface/bulb.svg",
+                  iconColor: "text-green-600"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -125,9 +129,12 @@ function AboutPage() {
                   viewport={{ once: true }}
                   className="p-6 rounded-2xl bg-card border border-border"
                 >
-                  <h4 className={`text-2xl md:text-3xl font-semibold mb-4 md:mb-6 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
-                    {item.title}
-                  </h4>
+                  <div className="flex items-center mb-4 md:mb-6">
+                    <DoodleIcon name={item.icon} className={`w-10 h-10 md:w-12 md:h-12 ${item.iconColor} mr-4`} />
+                    <h4 className={`text-2xl md:text-3xl font-semibold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                      {item.title}
+                    </h4>
+                  </div>
                   <p className="text-base md:text-lg font-light text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
@@ -160,32 +167,32 @@ function AboutPage() {
                 {
                   title: "Innovation",
                   description: "We constantly explore new ways to create cutting-edge solutions for our clients.",
-                  icon: <TrendingUp className="w-8 h-8 text-blue-500" />
+                  icon: <DoodleIcon name="finance/trend-up.svg" className="w-8 h-8 text-blue-500" />
                 },
                 {
                   title: "Transparency",
                   description: "Open communication and honest pricing. No hidden costs or surprises in our implementations.",
-                  icon: <Shield className="w-8 h-8 text-green-500" />
+                  icon: <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-green-500" />
                 },
                 {
                   title: "Excellence",
                   description: "We deliver high-quality solutions that exceed expectations and drive real business value.",
-                  icon: <Award className="w-8 h-8 text-purple-500" />
+                  icon: <DoodleIcon name="interface/trophy.svg" className="w-8 h-8 text-purple-500" />
                 },
                 {
                   title: "Partnership",
                   description: "We work closely with our clients as partners, not just vendors, in their digital transformation journey.",
-                  icon: <Users className="w-8 h-8 text-orange-500" />
+                  icon: <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-orange-500" />
                 },
                 {
                   title: "Accessibility",
                   description: "Making enterprise-grade solutions accessible to businesses of all sizes through open-source technology.",
-                  icon: <Globe className="w-8 h-8 text-cyan-500" />
+                  icon: <DoodleIcon name="interface/globe.svg" className="w-8 h-8 text-cyan-500" />
                 },
                 {
                   title: "Support",
                   description: "Comprehensive training and ongoing support to ensure our clients succeed with their new systems.",
-                  icon: <HeadphonesIcon className="w-8 h-8 text-pink-500" />
+                  icon: <DoodleIcon name="interface/headphone.svg" className="w-8 h-8 text-pink-500" />
                 }
               ].map((value, index) => (
                 <motion.div

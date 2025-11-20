@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Linkedin, Instagram, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { DoodleIcon } from './doodle-icon';
 import { Link } from 'react-router-dom';
 import { Button } from './button';
 import { Logo } from './logo';
@@ -59,13 +60,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ navItems }) => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <a href="https://in.linkedin.com/company/beforth" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue-600 transition-colors">
-                      <Linkedin className="h-5 w-5" />
+                      <DoodleIcon name="logos/linkedin.svg" className="h-5 w-5" />
                     </a>
                     <a href="https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-pink-600 transition-colors">
-                      <Instagram className="h-5 w-5" />
+                      <DoodleIcon name="logos/instagram.svg" className="h-5 w-5" />
                     </a>
                     <a href="mailto:support@beforth.in" className="text-muted-foreground hover:text-gray-600 transition-colors">
-                      <Mail className="h-5 w-5" />
+                      <DoodleIcon name="interface/mail.svg" className="h-5 w-5" />
                     </a>
                     <Button
                       variant="ghost"

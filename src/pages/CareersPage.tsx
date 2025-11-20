@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Users, MapPin, Clock, Briefcase, GraduationCap, Heart, Zap, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
+import { DoodleIcon } from '../components/ui/doodle-icon';
 import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
+import { CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { MobileMenu } from '../components/ui/mobile-menu';
@@ -57,22 +57,22 @@ const companyValues = [
   {
     title: "Innovation",
     description: "We encourage creative thinking and embrace new technologies to solve complex business problems.",
-    icon: <Zap className="w-8 h-8 text-blue-500" />
+    icon: <DoodleIcon name="interface/zap.svg" className="w-8 h-8 text-blue-500" />
   },
   {
     title: "Collaboration",
     description: "We believe in the power of teamwork and open communication to achieve our goals.",
-    icon: <Users className="w-8 h-8 text-green-500" />
+    icon: <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-green-500" />
   },
   {
     title: "Growth",
     description: "We invest in our team's professional development and provide opportunities for career advancement.",
-    icon: <TrendingUp className="w-8 h-8 text-purple-500" />
+    icon: <DoodleIcon name="finance/trend-up.svg" className="w-8 h-8 text-purple-500" />
   },
   {
     title: "Work-Life Balance",
     description: "We support flexible work arrangements and prioritize our team's well-being.",
-    icon: <Heart className="w-8 h-8 text-pink-500" />
+    icon: <DoodleIcon name="interface/heart.svg" className="w-8 h-8 text-pink-500" />
   }
 ];
 
@@ -287,19 +287,19 @@ function CareersPage() {
                         <h3 className="text-2xl font-semibold text-foreground mb-2">{job.title}</h3>
                         <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                           <div className="flex items-center">
-                            <Briefcase className="w-4 h-4 mr-2" />
+                            <DoodleIcon name="interface/suitcase.svg" className="w-4 h-4 mr-2" />
                             {job.department}
                           </div>
                           <div className="flex items-center">
-                            <MapPin className="w-4 h-4 mr-2" />
+                            <DoodleIcon name="interface/location-pin.svg" className="w-4 h-4 mr-2" />
                             {job.location}
                           </div>
                           <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-2" />
+                            <DoodleIcon name="interface/clock.svg" className="w-4 h-4 mr-2" />
                             {job.type}
                           </div>
                           <div className="flex items-center">
-                            <GraduationCap className="w-4 h-4 mr-2" />
+                            <DoodleIcon name="interface/note.svg" className="w-4 h-4 mr-2" />
                             {job.experience}
                           </div>
                         </div>
@@ -307,9 +307,9 @@ function CareersPage() {
                       </div>
                       <div className="ml-4">
                         {expandedJob === job.id ? (
-                          <ChevronUp className="w-6 h-6 text-muted-foreground" />
+                          <DoodleIcon name="interface/arrow-up.svg" className="w-6 h-6 text-muted-foreground" />
                         ) : (
-                          <ChevronDown className="w-6 h-6 text-muted-foreground" />
+                          <DoodleIcon name="interface/arrow-down.svg" className="w-6 h-6 text-muted-foreground" />
                         )}
                       </div>
                     </div>

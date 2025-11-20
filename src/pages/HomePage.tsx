@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
-import { Users, BarChart3, Shield, Play, ArrowRight, Star, Zap, Target, Award, Globe, Clock } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { DoodleIcon } from '../components/ui/doodle-icon';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { MobileMenu } from '../components/ui/mobile-menu';
@@ -28,7 +29,7 @@ const services = [
     id: 'hrms-implementation',
     title: "HRMS Implementation",
     description: "Comprehensive HRMS solution with extensive HR features for complete workforce management, like our implementation for Aureole Group.",
-    icon: <Users className="h-8 w-8" />,
+    icon: <DoodleIcon name="interface/user.svg" className="h-8 w-8" />,
     className: "md:col-span-2",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-50/50 to-indigo-100/50 dark:from-blue-950/30 dark:to-indigo-900/30 relative overflow-hidden">
@@ -36,7 +37,7 @@ const services = [
         <div className="absolute top-4 right-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl"></div>
         <div className="absolute bottom-2 left-4 w-12 h-12 bg-indigo-500/20 rounded-full blur-lg"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Users className="w-8 h-8 text-blue-500/40" />
+          <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-blue-500/40" />
         </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       </div>
@@ -49,7 +50,7 @@ const services = [
     id: '4form-crm',
     title: "4form CRM",
     description: "Simple and effective CRM with mass email capabilities and built-in form/data collection support.",
-    icon: <BarChart3 className="h-8 w-8" />,
+    icon: <DoodleIcon name="interface/analytics.svg" className="h-8 w-8" />,
     demoUrl: "https://4form.beforth.in/",
     header: (
       <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-emerald-50/50 to-green-100/50 dark:from-emerald-950/30 dark:to-green-900/30 relative overflow-hidden">
@@ -57,7 +58,7 @@ const services = [
         <div className="absolute top-3 right-6 w-20 h-20 bg-emerald-500/20 rounded-full blur-xl"></div>
         <div className="absolute bottom-4 left-2 w-14 h-14 bg-green-500/20 rounded-full blur-lg"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <BarChart3 className="w-8 h-8 text-emerald-500/40" />
+          <DoodleIcon name="interface/analytics.svg" className="w-8 h-8 text-emerald-500/40" />
         </div>
       </div>
     ),
@@ -69,32 +70,32 @@ const services = [
 
 const features = [
   {
-    icon: <Zap className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/zap.svg" className="h-6 w-6" />,
     title: "Lightning Fast Implementation",
     description: "Get your HRMS and CRM up and running in weeks, not months, with our proven implementation methodology."
   },
   {
-    icon: <Shield className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/shield.svg" className="h-6 w-6" />,
     title: "Enterprise-Grade Security",
     description: "Your data stays private with strong encryption and secure access controls. We protect your business information like it's our own."
   },
   {
-    icon: <Target className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/target.svg" className="h-6 w-6" />,
     title: "Customized Solutions",
     description: "Tailored to your business needs with custom workflows, integrations, and reporting capabilities."
   },
   {
-    icon: <Award className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/trophy.svg" className="h-6 w-6" />,
     title: "Expert Support",
     description: "24/7 support from our experts who understand your business and technical requirements."
   },
   {
-    icon: <Globe className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/globe.svg" className="h-6 w-6" />,
     title: "Scalable Architecture",
     description: "Grows with your business from startup to enterprise with cloud and on-premise deployment options."
   },
   {
-    icon: <Clock className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/clock.svg" className="h-6 w-6" />,
     title: "Quick ROI",
     description: "See returns within 3-6 months with improved efficiency, reduced costs, and better decision-making."
   }
@@ -102,17 +103,17 @@ const features = [
 
 const approach = [
   {
-    icon: <Target className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/target.svg" className="h-6 w-6" />,
     title: "Startup-Focused",
     description: "We understand startup challenges and provide cost-effective solutions that scale with your growth."
   },
   {
-    icon: <Zap className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/zap.svg" className="h-6 w-6" />,
     title: "Rapid Deployment",
     description: "Get up and running quickly with our streamlined implementation process designed for fast-moving startups."
   },
   {
-    icon: <Shield className="h-6 w-6" />,
+    icon: <DoodleIcon name="interface/shield.svg" className="h-6 w-6" />,
     title: "Future-Proof",
     description: "Modern, scalable architecture ensuring long-term flexibility and avoiding vendor lock-in."
   }
@@ -141,19 +142,19 @@ const processSteps = [
     number: "01",
     title: "We analyze your needs",
     description: "Deep dive into your business processes, challenges, and goals. We don't just implement—we understand your unique requirements first.",
-    icon: <Target className="h-8 w-8" />
+    icon: <DoodleIcon name="interface/target.svg" className="h-8 w-8" />
   },
   {
     number: "02",
     title: "We design & customize",
     description: "Tailored HRMS and CRM solutions built specifically for your workflows, with custom fields, reports, and integrations.",
-    icon: <Zap className="h-8 w-8" />
+    icon: <DoodleIcon name="interface/zap.svg" className="h-8 w-8" />
   },
   {
     number: "03",
     title: "We deliver & support",
     description: "Smooth implementation with comprehensive training and 24/7 ongoing support. We're your partners in growth, not just vendors.",
-    icon: <Award className="h-8 w-8" />
+    icon: <DoodleIcon name="interface/trophy.svg" className="h-8 w-8" />
   }
 ];
 
@@ -296,7 +297,7 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Star className="w-4 h-4" fill="currentColor" />
+              <DoodleIcon name="interface/star.svg" className="w-4 h-4" />
               Live Products • Ready to Use
             </motion.div>
 
@@ -465,7 +466,7 @@ function HomePage() {
                           asChild
                         >
                           <a href={service.demoUrl} target="_blank" rel="noopener noreferrer">
-                            Try Live Demo <ArrowRight className="w-4 h-4 ml-1" />
+                            Try Live Demo <DoodleIcon name="arrows/arrow-right.svg" className="w-4 h-4 ml-1" />
                           </a>
                         </Button>
                         <Button 

@@ -8,7 +8,7 @@ import { Logo } from '../components/ui/logo';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Mail, Phone, MapPin, Clock, Linkedin, Instagram } from 'lucide-react';
+import { DoodleIcon } from '../components/ui/doodle-icon';
 import { NavLink } from '../components/ui/nav-link';
 import { Footer } from '../components/ui/footer';
 
@@ -168,40 +168,42 @@ function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
+                className="flex flex-col h-full"
               >
-                <div>
+                <div className="flex-1 flex flex-col">
                   <h2 className="text-3xl md:text-5xl font-light text-foreground mb-8">
                     Send us a <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">message</span>
                   </h2>
                   <form className="space-y-6" onSubmit={handleSubmit} method='POST'>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-2 gap-6">
                       <Input placeholder="First Name" name='first_name' value={formData.first_name} onChange={handleChange} required />
                       <Input placeholder="Last Name" name='last_name' value={formData.last_name} onChange={handleChange} required />
-                      <Input type="email" placeholder="Email" name='email-address' value={formData['email-address']} onChange={handleChange} required />
-                      <Input type="tel" placeholder="Phone" name='phone_number' value={formData.phone_number} onChange={handleChange} required />
-                      <Input placeholder="Company" name='company' value={formData.company} onChange={handleChange} required />
-                      <select 
-                        className="w-full px-0 py-3 border-0 border-b-2 border-border bg-transparent focus:border-primary focus:ring-0 text-base text-foreground font-light transition-colors" 
-                        name='industry' 
-                        value={formData.industry}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="" className="text-muted-foreground">Industry</option>
-                        <option value="Manufacturing">Manufacturing</option>
-                        <option value="Healthcare">Healthcare</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Technology">Technology</option>
-                        <option value="Other">Other</option>
-                      </select>
                     </div>
+                    <Input type="email" placeholder="Email" name='email-address' value={formData['email-address']} onChange={handleChange} required />
+                    <Input type="tel" placeholder="Phone" name='phone_number' value={formData.phone_number} onChange={handleChange} required />
+                    <Input placeholder="Company" name='company' value={formData.company} onChange={handleChange} required />
+                    <select 
+                      className="w-full px-0 py-3 border-0 border-b-2 border-border bg-transparent focus:border-primary focus:ring-0 text-base text-foreground font-light transition-colors" 
+                      name='industry' 
+                      value={formData.industry}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="" className="text-muted-foreground">Industry</option>
+                      <option value="Manufacturing">Manufacturing</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Retail">Retail</option>
+                      <option value="Finance">Finance</option>
+                      <option value="Technology">Technology</option>
+                      <option value="Other">Other</option>
+                    </select>
                     <Textarea 
                       placeholder="Tell us about your HR and CRM requirements..."
                       name='message'
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      rows={2}
                     />
                     <div className="pt-4">
                       <Button size="lg" className="w-full sm:w-auto px-12" type="submit">
@@ -214,26 +216,22 @@ function ContactPage() {
 
               {/* Contact Information */}
               <motion.div 
-                className="space-y-8"
+                className="space-y-6"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
                 <div>
-                  <h2 className="text-3xl md:text-5xl font-light text-foreground mb-4">
+                  <h2 className="text-3xl md:text-5xl font-light text-foreground mb-8">
                     Let's <span className="font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">connect</span>
                   </h2>
-                  <p className="text-base font-light text-muted-foreground leading-relaxed mb-8">
-                    We're here to help you transform your business with our HRMS and CRM solutions. 
-                    Reach out to us for a free consultation or any questions you might have.
-                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6">
+                <div className="space-y-4">
                   {[
                     {
-                      icon: Mail,
+                      icon: "interface/mail.svg",
                       title: "Support",
                       content: "support@beforth.in",
                       description: "Technical support and assistance",
@@ -241,7 +239,7 @@ function ContactPage() {
                       iconColor: "text-blue-600"
                     },
                     {
-                      icon: Phone,
+                      icon: "interface/phone.svg",
                       title: "Call Us",
                       content: "+919766183834",
                       description: "Mon-Fri from 9am to 6pm",
@@ -249,7 +247,7 @@ function ContactPage() {
                       iconColor: "text-emerald-600"
                     },
                     {
-                      icon: MapPin,
+                      icon: "interface/location-pin.svg",
                       title: "Visit Us",
                       content: "Nashik, Maharashtra, India",
                       description: "Our development center",
@@ -257,7 +255,7 @@ function ContactPage() {
                       iconColor: "text-purple-600"
                     },
                     {
-                      icon: Clock,
+                      icon: "interface/clock.svg",
                       title: "Business Hours",
                       content: "Monday - Friday: 9:00 AM - 6:00 PM",
                       description: "Saturday: 10:00 AM - 4:00 PM",
@@ -271,43 +269,48 @@ function ContactPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      whileHover={{ y: -4 }}
-                      className="rounded-2xl bg-card border-2 border-border shadow-md hover:shadow-xl hover:border-border/80 transition-all duration-300 p-6 cursor-pointer"
+                      className="rounded-xl bg-card border border-border p-4"
                     >
-                      <div className="flex items-start space-x-4">
-                        {/* Icon with subtle background */}
+                      <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0">
-                          <div className={`w-12 h-12 rounded-xl ${item.bgColor} flex items-center justify-center`}>
-                            <item.icon className={`w-6 h-6 ${item.iconColor}`} />
+                          <div className={`w-10 h-10 rounded-lg ${item.bgColor} flex items-center justify-center`}>
+                            <DoodleIcon name={item.icon} className={`w-5 h-5 ${item.iconColor}`} />
                           </div>
                         </div>
                         
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">{item.title}</h3>
-                          <p className="text-base font-semibold text-foreground mb-1 break-words">{item.content}</p>
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                          <h3 className="text-xs font-semibold text-muted-foreground mb-1 uppercase tracking-wider">{item.title}</h3>
+                          <p className="text-sm font-semibold text-foreground mb-0.5 break-words">{item.content}</p>
+                          <p className="text-xs text-muted-foreground">{item.description}</p>
                         </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
 
+                <div>
+                  <p className="text-base font-light text-muted-foreground leading-relaxed mb-6">
+                    We're here to help you transform your business with our HRMS and CRM solutions. 
+                    Reach out to us for a free consultation or any questions you might have.
+                  </p>
+                </div>
+
                 {/* Social Links */}
-                <div className="pt-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-6">Follow Us</h3>
+                <div>
+                  <h3 className="text-base font-semibold text-foreground mb-4">Follow Us</h3>
                   <div className="flex gap-3">
                     {[
-                      { icon: Linkedin, href: "https://in.linkedin.com/company/beforth", label: "LinkedIn" },
-                      { icon: Instagram, href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", label: "Instagram" },
-                      { icon: Mail, href: "mailto:support@beforth.in", label: "Email" }
+                      { icon: "logos/linkedin.svg", href: "https://in.linkedin.com/company/beforth", label: "LinkedIn" },
+                      { icon: "logos/instagram.svg", href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", label: "Instagram" },
+                      { icon: "interface/mail.svg", href: "mailto:support@beforth.in", label: "Email" }
                     ].map((social, index) => (
                       <a
                         key={index}
                         href={social.href}
                         aria-label={social.label}
-                        className="w-12 h-12 bg-card border-2 border-border rounded-xl flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-all duration-200"
+                        className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-all duration-200"
                       >
-                        <social.icon className="h-5 w-5" />
+                        <DoodleIcon name={social.icon} className="h-5 w-5" />
                       </a>
                     ))}
                   </div>

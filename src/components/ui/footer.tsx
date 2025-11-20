@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Mail, Building2, Users, TrendingUp } from 'lucide-react';
 import { Button } from './button';
 import { Input } from './input';
 import { Logo } from './logo';
+import { DoodleIcon } from './doodle-icon';
 
 export function Footer() {
   return (
@@ -28,9 +28,9 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: Linkedin, href: "https://in.linkedin.com/company/beforth", color: "hover:text-blue-600" },
-                { icon: Instagram, href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", color: "hover:text-pink-600" },
-                { icon: Mail, href: "mailto:support@beforth.in", color: "hover:text-gray-600" }
+                { icon: "logos/linkedin.svg", href: "https://in.linkedin.com/company/beforth", color: "hover:text-blue-600" },
+                { icon: "logos/instagram.svg", href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", color: "hover:text-pink-600" },
+                { icon: "interface/mail.svg", href: "mailto:support@beforth.in", color: "hover:text-gray-600" }
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -39,7 +39,7 @@ export function Footer() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <DoodleIcon name={social.icon} className="h-5 w-5" />
                 </motion.a>
               ))}
             </div>
@@ -77,17 +77,17 @@ export function Footer() {
             <h3 className="text-lg font-semibold text-foreground mb-6">Company</h3>
             <ul className="space-y-3">
               {[
-                { name: "About Us", icon: Building2, href: "/about" },
-                { name: "Our Team", icon: Users, href: "/team" },
-                { name: "Careers", icon: TrendingUp, href: "/careers" },
+                { name: "About Us", icon: "interface/home.svg", href: "/about" },
+                { name: "Our Team", icon: "interface/user.svg", href: "/team" },
+                { name: "Careers", icon: "finance/trend-up.svg", href: "/careers" },
                 // { name: "News & Blog", icon: BookOpen, href: "/blog" },
                 // { name: "Case Studies", icon: Award, href: "/case-studies" },
                 // { name: "Partners", icon: Globe, href: "/partners" },
                 // { name: "Investors", icon: BarChart3, href: "/investors" },
-                { name: "Contact", icon: Mail, href: "/contact" }
+                { name: "Contact", icon: "interface/mail.svg", href: "/contact" }
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <item.icon className="h-4 w-4 text-muted-foreground mr-2" />
+                  <DoodleIcon name={item.icon} className="h-4 w-4 text-muted-foreground mr-2" />
                   <Link to={item.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {item.name}
                   </Link>

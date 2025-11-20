@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
+import { DoodleIcon } from '../components/ui/doodle-icon';
 import { Button } from '../components/ui/button';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
@@ -139,7 +139,7 @@ function TeamPage() {
                     <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{member.bio}</p>
                     <div className="flex justify-center space-x-2">
                       <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-foreground transition-colors">
-                        <Mail className="w-5 h-5" />
+                        <DoodleIcon name="interface/mail.svg" className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
