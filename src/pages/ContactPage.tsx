@@ -59,8 +59,8 @@ function ContactPage() {
           setFormData({
             first_name: '',
             last_name: '',
-            email: '',
-            phone: '',
+            'email-address': '',
+            'phone_number': '',
             company: '',
             industry: '',
             message: '',
