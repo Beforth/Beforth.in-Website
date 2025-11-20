@@ -391,9 +391,9 @@ function CareersPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="border-0 shadow-none bg-transparent">
+              <div className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-0">
-                  <form className="space-y-6 md:space-y-8" onSubmit={handleApplicationSubmit}>
+                  <form className="space-y-6 md:space-y-8" onSubmit={handleApplicationSubmit} noValidate>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                       <Input 
                         placeholder="Full Name" 
@@ -419,37 +419,37 @@ function CareersPage() {
                         required 
                       />
                       <select 
-                        className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" 
+                        className="w-full px-0 py-3 border-0 border-b-2 border-border bg-transparent focus:border-primary focus:ring-0 text-base text-foreground font-light transition-colors" 
                         name="position" 
                         value={applicationData.position}
                         onChange={handleInputChange}
                         required
                       >
-                        <option value="">Select Position</option>
+                        <option value="" className="text-muted-foreground">Select Position</option>
                         {jobOpenings.map(job => (
                           <option key={job.id} value={job.title}>{job.title}</option>
                         ))}
                       </select>
                       <select 
-                        className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary" 
+                        className="w-full px-0 py-3 border-0 border-b-2 border-border bg-transparent focus:border-primary focus:ring-0 text-base text-foreground font-light transition-colors" 
                         name="experience" 
                         value={applicationData.experience}
                         onChange={handleInputChange}
                         required
                       >
-                        <option value="">Years of Experience</option>
+                        <option value="" className="text-muted-foreground">Years of Experience</option>
                         <option value="0-1">0-1 years</option>
                         <option value="1-3">1-3 years</option>
                         <option value="3-5">3-5 years</option>
                         <option value="5+">5+ years</option>
                       </select>
                       <div>
-                        <label className="block text-sm font-medium text-foreground mb-2">Resume/CV</label>
+                        <label className="block text-sm font-light text-muted-foreground mb-2">Resume/CV</label>
                         <input 
                           type="file" 
                           accept=".pdf,.doc,.docx"
                           onChange={handleFileChange}
-                          className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-0 py-3 border-0 border-b-2 border-border bg-transparent text-foreground font-light focus:border-primary focus:ring-0 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-light file:bg-primary/10 file:text-primary"
                           required
                         />
                       </div>
@@ -469,7 +469,7 @@ function CareersPage() {
                     </div>
                   </form>
                 </CardContent>
-              </Card>
+              </div>
             </motion.div>
           </div>
         </section>
