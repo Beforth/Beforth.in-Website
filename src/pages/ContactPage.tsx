@@ -177,8 +177,8 @@ function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <Input placeholder="First Name" name='first_name' value={formData.first_name} onChange={handleChange} required />
                       <Input placeholder="Last Name" name='last_name' value={formData.last_name} onChange={handleChange} required />
-                      <Input type="email" placeholder="Email" name='email' value={formData.email} onChange={handleChange} required />
-                      <Input type="tel" placeholder="Phone" name='phone' value={formData.phone} onChange={handleChange} required />
+                      <Input type="email" placeholder="Email" name='email-address' value={formData['email-address']} onChange={handleChange} required />
+                      <Input type="tel" placeholder="Phone" name='phone_number' value={formData.phone_number} onChange={handleChange} required />
                       <Input placeholder="Company" name='company' value={formData.company} onChange={handleChange} required />
                       <select 
                         className="w-full px-0 py-3 border-0 border-b-2 border-border bg-transparent focus:border-primary focus:ring-0 text-base text-foreground font-light transition-colors" 
