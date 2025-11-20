@@ -54,16 +54,16 @@ export function Footer() {
           >
             <h3 className="text-lg font-semibold text-foreground mb-6">Our Products</h3>
             <ul className="space-y-3">
-              {[
-                "Frappe HRMS",
-                "4form CRM"
-              ].map((service, index) => (
-                <li key={index}>
-                  <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {service}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
+                  HRMS
+                </Link>
+              </li>
+              <li>
+                <a href="https://4form.beforth.in" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  4form CRM
+                </a>
+              </li>
             </ul>
           </motion.div>
 
