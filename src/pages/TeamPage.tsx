@@ -35,7 +35,7 @@ const teamMembers = [
   {
     name: "Aditya Badgujar",
     role: "COO",
-    bio: "Research and Development expert specializing in Frappe framework and innovation.",
+    bio: "Research and Development expert specializing in Frontend & UI innovation.",
     image: "https://ui-avatars.com/api/?name=Aditya+Badgujar&size=200&background=8b5cf6&color=fff&bold=true&format=svg",
     email: "aditya.badgujar@beforth.in"
   },

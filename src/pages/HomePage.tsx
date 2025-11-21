@@ -127,14 +127,14 @@ const stats = [
 ];
 
 const behindTheScenes = [
-  { text: "Countless cups of chai fueling late-night brainstorming sessions" },
-  { text: "Quick meetings that turned into breakthrough solutions" },
-  { text: "'Just one more thing' moments that changed everything" },
-  { text: "Lines of code written at 2 AM, powered by passion" },
-  { text: "'This is impossible' moments we proved wrong" },
-  { text: "Slack messages and every emoji that made it worth it" },
-  { text: "Demo versions refined until we got it perfect" },
-  { text: "Endless dedication to making your business better" }
+  { text: "Countless cups of chai fueling late-night brainstorming sessions", icon: "misc/coffee-cup-1.svg" },
+  { text: "Quick meetings that turned into breakthrough solutions", icon: "interface/bulb.svg" },
+  { text: "'Just one more thing' moments that changed everything", icon: "interface/star.svg" },
+  { text: "Lines of code written at 2 AM, powered by passion", icon: "interface/pencil.svg" },
+  { text: "'This is impossible' moments we proved wrong", icon: "interface/trophy.svg" },
+  { text: "Slack messages and every emoji that made it worth it", icon: "interface/message.svg" },
+  { text: "Demo versions refined until we got it perfect", icon: "interface/target.svg" },
+  { text: "Endless dedication to making your business better", icon: "interface/heart.svg" }
 ];
 
 const processSteps = [
@@ -585,7 +585,9 @@ function HomePage() {
                   className="group"
                 >
                   <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 group-hover:scale-150 transition-transform"></div>
+                    <div className="flex-shrink-0 mt-1">
+                      <DoodleIcon name={item.icon} className="w-4 h-4 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                    </div>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed group-hover:text-foreground transition-colors">{item.text}</p>
                   </div>
                 </motion.div>

@@ -21,7 +21,7 @@ const navItems = [
 
 const blogCategories = [
   { name: "All", count: 24, active: true },
-  { name: "Frappe HRMS", count: 8, active: false },
+  { name: "HRMS", count: 8, active: false },
   { name: "CRM Solutions", count: 6, active: false },
   { name: "Implementation", count: 5, active: false },
   { name: "Open Source", count: 3, active: false },
@@ -30,24 +30,24 @@ const blogCategories = [
 
 const featuredArticle = {
   id: 1,
-  title: "Complete Guide to Frappe HRMS Implementation: Best Practices and Common Pitfalls",
-  excerpt: "Learn the essential steps for successful Frappe HRMS implementation, from planning and setup to go-live and optimization. Avoid common mistakes and ensure a smooth transition.",
+  title: "Complete Guide to HRMS Implementation: Best Practices and Common Pitfalls",
+  excerpt: "Learn the essential steps for successful HRMS implementation, from planning and setup to go-live and optimization. Avoid common mistakes and ensure a smooth transition.",
   author: "Sarah Johnson",
   authorRole: "Senior Implementation Specialist",
   authorAvatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800",
   publishDate: "2025-01-15",
   readTime: "12 min read",
-  category: "Frappe HRMS",
+  category: "HRMS",
   image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
   featured: true,
-  tags: ["HRMS", "Implementation", "Best Practices", "Frappe"]
+  tags: ["HRMS", "Implementation", "Best Practices"]
 };
 
 const blogArticles = [
   {
     id: 2,
-    title: "Why Open Source ERP is the Future of Business Management",
-    excerpt: "Discover how open-source ERP solutions like Frappe are revolutionizing business management with cost-effective, customizable, and scalable platforms.",
+    title: "Why Open Source Solutions are the Future of Business Management",
+    excerpt: "Discover how open-source HRMS and CRM solutions are revolutionizing business management with cost-effective, customizable, and scalable platforms.",
     author: "David Lee",
     authorRole: "Lead CRM Consultant",
     authorAvatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -56,12 +56,12 @@ const blogArticles = [
     category: "Open Source",
     image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
     featured: false,
-    tags: ["Open Source", "ERP", "Business Management"]
+    tags: ["Open Source", "HRMS", "Business Management"]
   },
   {
     id: 3,
-    title: "Streamlining Payroll Management with Frappe: A Case Study",
-    excerpt: "How we helped a manufacturing company reduce payroll processing time by 70% using Frappe's advanced payroll management features.",
+    title: "Streamlining Payroll Management with HRMS: A Case Study",
+    excerpt: "How we helped a manufacturing company reduce payroll processing time by 70% using our advanced HRMS payroll management features.",
     author: "Jane Smith",
     authorRole: "HR Solutions Expert",
     authorAvatar: "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -74,8 +74,8 @@ const blogArticles = [
   },
   {
     id: 4,
-    title: "Building Custom CRM Workflows with Frappe Framework",
-    excerpt: "Learn how to create powerful, custom CRM workflows that adapt to your business processes using Frappe's flexible framework.",
+    title: "Building Custom CRM Workflows with 4form",
+    excerpt: "Learn how to create powerful, custom CRM workflows that adapt to your business processes using 4form's flexible platform.",
     author: "Mike Chen",
     authorRole: "Integration Architect",
     authorAvatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -84,12 +84,12 @@ const blogArticles = [
     category: "CRM Solutions",
     image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
     featured: false,
-    tags: ["CRM", "Workflows", "Customization", "Frappe Framework"]
+    tags: ["CRM", "Workflows", "Customization", "4form"]
   },
   {
     id: 5,
-    title: "The ROI of Switching to Open Source ERP: A Financial Analysis",
-    excerpt: "A detailed financial analysis showing how businesses can save up to 60% on ERP costs while gaining more flexibility with open-source solutions.",
+    title: "The ROI of Switching to Open Source HRMS: A Financial Analysis",
+    excerpt: "A detailed financial analysis showing how businesses can save up to 60% on HRMS costs while gaining more flexibility with open-source solutions.",
     author: "Sarah Johnson",
     authorRole: "Senior Implementation Specialist",
     authorAvatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -98,26 +98,26 @@ const blogArticles = [
     category: "Business",
     image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200",
     featured: false,
-    tags: ["ROI", "Cost Analysis", "Open Source", "ERP"]
+    tags: ["ROI", "Cost Analysis", "Open Source", "HRMS"]
   },
   {
     id: 6,
-    title: "Frappe vs. Traditional ERP: A Comprehensive Comparison",
-    excerpt: "Compare Frappe with traditional ERP solutions across key metrics including cost, flexibility, customization, and implementation time.",
+    title: "Open Source vs. Traditional HRMS: A Comprehensive Comparison",
+    excerpt: "Compare open-source HRMS with traditional solutions across key metrics including cost, flexibility, customization, and implementation time.",
     author: "David Lee",
     authorRole: "Lead CRM Consultant",
     authorAvatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800",
     publishDate: "2025-01-03",
     readTime: "9 min read",
-    category: "Frappe HRMS",
+    category: "HRMS",
     image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1200",
     featured: false,
-    tags: ["Comparison", "ERP", "Frappe", "Analysis"]
+    tags: ["Comparison", "HRMS", "Open Source", "Analysis"]
   },
   {
     id: 7,
-    title: "Integrating Frappe with Third-Party Applications: Best Practices",
-    excerpt: "Learn how to seamlessly integrate Frappe with your existing business applications and tools for a unified workflow experience.",
+    title: "Integrating HRMS and 4form CRM with Third-Party Applications: Best Practices",
+    excerpt: "Learn how to seamlessly integrate our HRMS and 4form CRM with your existing business applications and tools for a unified workflow experience.",
     author: "Mike Chen",
     authorRole: "Integration Architect",
     authorAvatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -228,7 +228,7 @@ function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Stay updated with the latest insights on Frappe HRMS, CRM solutions, 
+              Stay updated with the latest insights on HRMS, 4form CRM solutions, 
               implementation best practices, and open-source business technology.
             </motion.p>
             

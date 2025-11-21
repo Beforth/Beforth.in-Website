@@ -26,13 +26,13 @@ const navItems = [
 const blogArticles = {
   1: {
     id: 1,
-    title: "Complete Guide to Frappe HRMS Implementation: Best Practices and Common Pitfalls",
-    excerpt: "Learn the essential steps for successful Frappe HRMS implementation, from planning and setup to go-live and optimization. Avoid common mistakes and ensure a smooth transition.",
+    title: "Complete Guide to HRMS Implementation: Best Practices and Common Pitfalls",
+    excerpt: "Learn the essential steps for successful HRMS implementation, from planning and setup to go-live and optimization. Avoid common mistakes and ensure a smooth transition.",
     content: `
-      <p>Implementing a new HRMS system can be a daunting task, but with the right approach and understanding of Frappe's capabilities, you can ensure a smooth transition that delivers real business value. In this comprehensive guide, we'll walk you through the entire process, from initial planning to post-implementation optimization.</p>
+      <p>Implementing a new HRMS system can be a daunting task, but with the right approach and understanding of our HRMS capabilities, you can ensure a smooth transition that delivers real business value. In this comprehensive guide, we'll walk you through the entire process, from initial planning to post-implementation optimization.</p>
 
-      <h2>Understanding Frappe HRMS</h2>
-      <p>Frappe HRMS is a powerful, open-source human resource management system built on the Frappe framework. Unlike traditional proprietary solutions, Frappe offers:</p>
+      <h2>Understanding Our HRMS</h2>
+      <p>Our HRMS is a powerful, open-source human resource management system. Unlike traditional proprietary solutions, our HRMS offers:</p>
       <ul>
         <li><strong>Complete customization</strong> - Modify any aspect of the system to match your business processes</li>
         <li><strong>Cost-effective licensing</strong> - No per-user fees or expensive enterprise licenses</li>
@@ -52,19 +52,19 @@ const blogArticles = {
         <li>Management and executives</li>
       </ul>
 
-      <p>Document all current processes, pain points, and desired outcomes. This will help you configure Frappe to match your specific needs.</p>
+      <p>Document all current processes, pain points, and desired outcomes. This will help you configure the HRMS to match your specific needs.</p>
 
       <h3>2. Data Migration Strategy</h3>
       <p>Plan your data migration carefully:</p>
       <ul>
         <li>Audit existing data for accuracy and completeness</li>
-        <li>Map data fields from your current system to Frappe</li>
+        <li>Map data fields from your current system to the HRMS</li>
         <li>Create data cleaning and validation procedures</li>
         <li>Plan for parallel running during transition</li>
       </ul>
 
       <h3>3. Infrastructure Requirements</h3>
-      <p>Ensure your infrastructure can support Frappe:</p>
+      <p>Ensure your infrastructure can support the HRMS:</p>
       <ul>
         <li>Server specifications (CPU, RAM, storage)</li>
         <li>Database requirements (MariaDB/MySQL)</li>
@@ -76,9 +76,9 @@ const blogArticles = {
       <p>Break down your implementation into manageable phases:</p>
 
       <h3>Phase 1: System Setup and Configuration</h3>
-      <p>This phase involves the technical setup of Frappe:</p>
+      <p>This phase involves the technical setup of the HRMS:</p>
       <ol>
-        <li>Install Frappe and ERPNext</li>
+        <li>Install the HRMS system</li>
         <li>Configure basic system settings</li>
         <li>Set up user roles and permissions</li>
         <li>Configure company and organizational structure</li>
@@ -134,7 +134,7 @@ const blogArticles = {
       </ul>
 
       <h3>3. Over-Customization</h3>
-      <p>While Frappe is highly customizable, avoid:</p>
+      <p>While our HRMS is highly customizable, avoid:</p>
       <ul>
         <li>Customizing before understanding standard functionality</li>
         <li>Creating unnecessary complexity</li>
@@ -155,7 +155,7 @@ const blogArticles = {
       <p>Follow these proven strategies for a successful implementation:</p>
 
       <h3>1. Start with Standard Configuration</h3>
-      <p>Begin with Frappe's standard HRMS configuration and customize only when necessary. This approach:</p>
+      <p>Begin with the standard HRMS configuration and customize only when necessary. This approach:</p>
       <ul>
         <li>Reduces implementation time</li>
         <li>Leverages proven workflows</li>
@@ -221,11 +221,11 @@ const blogArticles = {
       </ul>
 
       <h2>Conclusion</h2>
-      <p>Successful Frappe HRMS implementation requires careful planning, proper execution, and ongoing optimization. By following the best practices outlined in this guide and avoiding common pitfalls, you can ensure a smooth transition that delivers real business value.</p>
+      <p>Successful HRMS implementation requires careful planning, proper execution, and ongoing optimization. By following the best practices outlined in this guide and avoiding common pitfalls, you can ensure a smooth transition that delivers real business value.</p>
 
       <p>Remember, implementation is not just a technical project—it's a business transformation. Invest in change management, user training, and continuous improvement to maximize your return on investment.</p>
 
-      <p>If you need assistance with your Frappe HRMS implementation, our team of experts is here to help. Contact us to discuss your specific requirements and learn how we can support your success.</p>
+      <p>If you need assistance with your HRMS implementation, our team of experts is here to help. Contact us to discuss your specific requirements and learn how we can support your success.</p>
     `,
     author: "Sarah Johnson",
     authorRole: "Senior Implementation Specialist",

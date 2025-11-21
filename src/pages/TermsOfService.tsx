@@ -146,8 +146,8 @@ const TermsOfService: React.FC = () => {
                     <div>
                       <h3 className="text-lg font-semibold mb-2">Our Services</h3>
                       <p className="text-muted-foreground">
-                        Beforth provides comprehensive Frappe framework implementation services, including HRMS, 
-                        ERPNext customization, and business process automation solutions.
+                        Beforth provides comprehensive HRMS implementation and 4form CRM services, 
+                        including customization and business process automation solutions.
                       </p>
                     </div>
                     <div>
