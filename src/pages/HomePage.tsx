@@ -414,7 +414,7 @@ function HomePage() {
                 >
                   <Card className="h-full p-6 hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20">
                     <div className="flex items-start space-x-4">
-                      <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <div className="p-2 rounded-lg bg-primary/10 text-primary transition-colors">
                         {feature.icon}
                       </div>
                       <div className="flex-1">

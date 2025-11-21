@@ -159,7 +159,7 @@ function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-20 md:py-24 bg-background">
+        <section className="pt-20 md:pt-24 pb-8 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
               {/* Contact Form */}
@@ -294,29 +294,39 @@ function ContactPage() {
                     Reach out to us for a free consultation or any questions you might have.
                   </p>
                 </div>
-
-                {/* Social Links */}
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-4">Follow Us</h3>
-                  <div className="flex gap-3">
-                    {[
-                      { icon: "logos/linkedin.svg", href: "https://in.linkedin.com/company/beforth", label: "LinkedIn" },
-                      { icon: "logos/instagram.svg", href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", label: "Instagram" },
-                      { icon: "interface/mail.svg", href: "mailto:support@beforth.in", label: "Email" }
-                    ].map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.href}
-                        aria-label={social.label}
-                        className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-all duration-200"
-                      >
-                        <DoodleIcon name={social.icon} className="h-5 w-5" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Social Links Section - Centered */}
+        <section className="pb-6 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div 
+              className="flex flex-col items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl font-semibold text-foreground mb-6">Follow Us</h3>
+              <div className="flex gap-4">
+                {[
+                  { icon: "logos/linkedin.svg", href: "https://in.linkedin.com/company/beforth", label: "LinkedIn" },
+                  { icon: "logos/instagram.svg", href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", label: "Instagram" },
+                  { icon: "interface/mail.svg", href: "mailto:support@beforth.in", label: "Email" }
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center text-muted-foreground hover:border-primary hover:text-primary transition-all duration-200"
+                  >
+                    <DoodleIcon name={social.icon} className="h-7 w-7" />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
