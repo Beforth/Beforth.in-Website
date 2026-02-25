@@ -24,12 +24,12 @@ export function Footer() {
               <span className="text-2xl font-semibold text-foreground">Beforth</span>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Transforming businesses through innovative HRMS and CRM solutions. We help companies streamline HR operations, manage customer relationships, and accelerate growth with modern technology.
+              We transform traditional business operations—paper, registers, manual calculations—into structured digital systems. ERP and custom software for pharma, salons, wholesalers, and growing industries.
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: "logos/linkedin.svg", href: "https://in.linkedin.com/company/beforth", color: "hover:text-blue-600" },
-                { icon: "logos/instagram.svg", href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", color: "hover:text-pink-600" },
+                { icon: "logos/linkedin.svg", href: "https://in.linkedin.com/company/beforth", color: "hover:text-teal-600" },
+                { icon: "logos/instagram.svg", href: "https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==", color: "hover:text-teal-600" },
                 { icon: "interface/mail.svg", href: "mailto:support@beforth.in", color: "hover:text-gray-600" }
               ].map((social, index) => (
                 <motion.a

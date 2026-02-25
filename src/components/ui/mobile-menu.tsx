@@ -59,10 +59,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ navItems }) => {
                     <span className="text-xl font-semibold text-foreground">Beforth</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <a href="https://in.linkedin.com/company/beforth" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue-600 transition-colors">
+                    <a href="https://in.linkedin.com/company/beforth" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-teal-600 transition-colors">
                       <DoodleIcon name="logos/linkedin.svg" className="h-5 w-5" />
                     </a>
-                    <a href="https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-pink-600 transition-colors">
+                    <a href="https://www.instagram.com/beforth.in?igsh=MWc4dThsMm8wa245dg==" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-teal-600 transition-colors">
                       <DoodleIcon name="logos/instagram.svg" className="h-5 w-5" />
                     </a>
                     <a href="mailto:support@beforth.in" className="text-muted-foreground hover:text-gray-600 transition-colors">

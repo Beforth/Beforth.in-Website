@@ -30,14 +30,14 @@ const services = [
     className: "md:col-span-2",
     demoUrl: "https://hrms.aureolegroup.com/login",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-blue-50/50 to-indigo-100/50 dark:from-blue-950/30 dark:to-indigo-900/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-600/10"></div>
-        <div className="absolute top-4 right-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-2 left-4 w-12 h-12 bg-indigo-500/20 rounded-full blur-lg"></div>
+      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-teal-500/10"></div>
+        <div className="absolute top-4 right-4 w-16 h-16 bg-teal-500/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-2 left-4 w-12 h-12 bg-teal-500/20 rounded-full blur-lg"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-blue-500/40" />
+          <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-teal-500/40" />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-teal-500/5"></div>
       </div>
     ),
     features: [
@@ -73,16 +73,16 @@ const services = [
     icon: <DoodleIcon name="interface/analytics.svg" className="h-8 w-8" />,
     demoUrl: "https://4form.beforth.in/",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-emerald-50/50 to-green-100/50 dark:from-emerald-950/30 dark:to-green-900/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-green-600/10"></div>
-        <div className="absolute top-3 right-6 w-20 h-20 bg-emerald-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-4 left-2 w-14 h-14 bg-green-500/20 rounded-full blur-lg"></div>
+      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-teal-500/10"></div>
+        <div className="absolute top-3 right-6 w-20 h-20 bg-teal-500/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-4 left-2 w-14 h-14 bg-teal-500/20 rounded-full blur-lg"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/analytics.svg" className="w-8 h-8 text-emerald-500/40" />
+          <DoodleIcon name="interface/analytics.svg" className="w-8 h-8 text-teal-500/40" />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(16,185,129,0.1),transparent_50%)]"></div>
-        <div className="absolute top-2 left-2 w-2 h-2 bg-emerald-400/60 rounded-full"></div>
-        <div className="absolute bottom-3 right-3 w-1 h-1 bg-green-400/60 rounded-full"></div>
+        <div className="absolute inset-0 bg-teal-500/5"></div>
+        <div className="absolute top-2 left-2 w-2 h-2 bg-teal-400/60 rounded-full"></div>
+        <div className="absolute bottom-3 right-3 w-1 h-1 bg-teal-400/60 rounded-full"></div>
       </div>
     ),
     features: [
@@ -117,16 +117,16 @@ const services = [
     description: "Integrate our HRMS and CRM solutions with your existing business systems for seamless operations.",
     icon: <DoodleIcon name="interface/shield.svg" className="h-8 w-8" />,
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-purple-50/50 to-violet-100/50 dark:from-purple-950/30 dark:to-violet-900/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-violet-600/10"></div>
-        <div className="absolute top-2 right-2 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-1 left-1 w-16 h-16 bg-violet-500/20 rounded-full blur-xl"></div>
+      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-teal-500/10"></div>
+        <div className="absolute top-2 right-2 w-24 h-24 bg-teal-500/20 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-1 left-1 w-16 h-16 bg-teal-500/20 rounded-full blur-xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-purple-500/40" />
+          <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-teal-500/40" />
         </div>
-        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(147,51,234,0.1),transparent_120deg,rgba(139,92,246,0.1),transparent_240deg)]"></div>
-        <div className="absolute top-4 left-4 w-1 h-8 bg-purple-400/30 rounded-full transform rotate-45"></div>
-        <div className="absolute bottom-4 right-4 w-1 h-6 bg-violet-400/30 rounded-full transform -rotate-45"></div>
+        <div className="absolute inset-0 bg-teal-500/5"></div>
+        <div className="absolute top-4 left-4 w-1 h-8 bg-teal-400/30 rounded-full transform rotate-45"></div>
+        <div className="absolute bottom-4 right-4 w-1 h-6 bg-teal-400/30 rounded-full transform -rotate-45"></div>
       </div>
     ),
     features: [
@@ -161,17 +161,17 @@ const services = [
     icon: <DoodleIcon name="interface/clock.svg" className="h-8 w-8" />,
     className: "md:col-span-2",
     header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-orange-50/50 to-red-100/50 dark:from-orange-950/30 dark:to-red-900/30 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-600/10"></div>
-        <div className="absolute top-1 right-1 w-28 h-28 bg-orange-500/20 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-2 left-3 w-18 h-18 bg-red-500/20 rounded-full blur-xl"></div>
+      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-teal-500/10"></div>
+        <div className="absolute top-1 right-1 w-28 h-28 bg-teal-500/20 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-2 left-3 w-18 h-18 bg-teal-500/20 rounded-full blur-xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/clock.svg" className="w-8 h-8 text-orange-500/40" />
+          <DoodleIcon name="interface/clock.svg" className="w-8 h-8 text-teal-500/40" />
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.1),transparent_50%)]"></div>
-        <div className="absolute top-3 left-6 w-3 h-3 bg-orange-400/50 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-5 right-6 w-2 h-2 bg-red-400/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-6 right-8 w-1 h-1 bg-orange-300/60 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute inset-0 bg-teal-500/5"></div>
+        <div className="absolute top-3 left-6 w-3 h-3 bg-teal-400/50 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-5 right-6 w-2 h-2 bg-teal-400/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-6 right-8 w-1 h-1 bg-teal-300/60 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
     ),
     features: [
@@ -262,13 +262,12 @@ function ServicesPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-background via-emerald-50/30 to-blue-50/20 overflow-hidden">
+        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-emerald-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -279,7 +278,7 @@ function ServicesPage() {
               transition={{ duration: 0.8 }}
             >
               Our <br />
-              <span className="font-semibold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">services.</span>
+              <span className="font-semibold text-teal-600">services.</span>
             </motion.h1>
             
             <motion.p 
@@ -288,7 +287,7 @@ function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Live products and comprehensive services for your business needs.
+              ERP and custom software—HRMS, CRM, integrations—adapted to your industry. We turn paper and manual processes into structured digital systems.
             </motion.p>
             
             <motion.div 
@@ -349,29 +348,29 @@ function ServicesPage() {
               >
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-8 md:mb-12 leading-tight">
                   Why choose<br />
-                  <span className="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Beforth?</span>
+                  <span className="font-semibold text-teal-600">Beforth?</span>
                 </h2>
                 <div className="space-y-8 md:space-y-10">
                   {[
                     {
-                      title: "Real, Production-Ready Solutions",
-                      description: "Our HRMS and CRM solutions are live and actively used by businesses. Try them yourself with our demo links.",
-                      color: "border-l-blue-500"
+                      title: "Paper to Digital",
+                      description: "We take businesses running on paper, registers, and manual calculations—and turn them into structured systems. Try our live demos to see what's possible.",
+                      color: "border-l-teal-500"
                     },
                     {
-                      title: "Simple & Effective",
-                      description: "Built for startups and growing businesses. No complex workflows, just powerful features that work.",
-                      color: "border-l-green-500"
+                      title: "Industry-Adaptable",
+                      description: "Pharma, salons, wholesalers, gold shops, garment businesses. We understand workflows across industries and customize to your process.",
+                      color: "border-l-teal-500"
                     },
                     {
-                      title: "Quick Implementation",
-                      description: "Get started fast with our streamlined setup process. Your team can be up and running in days.",
-                      color: "border-l-purple-500"
+                      title: "Clarity & Control",
+                      description: "We're not just selling software—we're selling clarity in operations, control over inventory, and accurate data. Your systems become the backbone.",
+                      color: "border-l-teal-500"
                     },
                     {
-                      title: "Dedicated Support",
-                      description: "24/7 support from our team who understands your business needs and technical requirements.",
-                      color: "border-l-orange-500"
+                      title: "Process-Focused Support",
+                      description: "We bridge traditional business thinking and modern execution. Support from people who understand both your process and the technology.",
+                      color: "border-l-teal-500"
                     }
                   ].map((benefit, index) => (
                     <motion.div
@@ -409,9 +408,9 @@ function ServicesPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-16 text-center">
               {[
-                { number: "2", label: "Live Products", color: "text-blue-600" },
-                { number: "24/7", label: "Support Available", color: "text-green-600" },
-                { number: "2025", label: "Founded", color: "text-purple-600" }
+                { number: "2", label: "Live Products", color: "text-teal-600" },
+                { number: "24/7", label: "Support Available", color: "text-teal-600" },
+                { number: "2025", label: "Founded", color: "text-teal-600" }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

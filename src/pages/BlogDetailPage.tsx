@@ -433,7 +433,7 @@ function BlogDetailPage() {
                     <button
                       onClick={() => setIsBookmarked(!isBookmarked)}
                       className={`flex items-center space-x-1 px-3 py-1 rounded-full text-sm transition-colors ${
-                        isBookmarked ? 'bg-blue-100 text-blue-600' : 'bg-muted text-muted-foreground hover:bg-blue-100 hover:text-blue-600'
+                        isBookmarked ? 'bg-teal-100 text-teal-600' : 'bg-muted text-muted-foreground hover:bg-teal-100 hover:text-teal-600'
                       }`}
                     >
                       <Bookmark className="h-4 w-4" />

@@ -127,13 +127,12 @@ function ContactPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-background via-pink-50/30 to-orange-50/20 overflow-hidden">
+        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-pink-500/5 to-orange-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -144,7 +143,7 @@ function ContactPage() {
               transition={{ duration: 0.8 }}
             >
               Get in <br />
-              <span className="font-semibold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent">touch.</span>
+              <span className="font-semibold text-teal-600">touch.</span>
             </motion.h1>
             
             <motion.p 
@@ -172,7 +171,7 @@ function ContactPage() {
               >
                 <div className="flex-1 flex flex-col">
                   <h2 className="text-3xl md:text-5xl font-light text-foreground mb-8">
-                    Send us a <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">message</span>
+                    Send us a <span className="font-semibold text-teal-600">message</span>
                   </h2>
                   <form className="space-y-6" onSubmit={handleSubmit} method='POST'>
                     <div className="grid grid-cols-2 gap-6">
@@ -224,7 +223,7 @@ function ContactPage() {
               >
                 <div>
                   <h2 className="text-3xl md:text-5xl font-light text-foreground mb-8">
-                    Let's <span className="font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">connect</span>
+                    Let's <span className="font-semibold text-teal-600">connect</span>
                   </h2>
                 </div>
 
@@ -235,8 +234,8 @@ function ContactPage() {
                       title: "Support",
                       content: "support@beforth.in",
                       description: "Technical support and assistance",
-                      bgColor: "bg-blue-100",
-                      iconColor: "text-blue-600"
+                      bgColor: "bg-teal-100",
+                      iconColor: "text-teal-600"
                     },
                     {
                       icon: "interface/phone.svg",
@@ -251,16 +250,16 @@ function ContactPage() {
                       title: "Visit Us",
                       content: "Nashik, Maharashtra, India",
                       description: "Our development center",
-                      bgColor: "bg-purple-100",
-                      iconColor: "text-purple-600"
+                      bgColor: "bg-teal-100",
+                      iconColor: "text-teal-600"
                     },
                     {
                       icon: "interface/clock.svg",
                       title: "Business Hours",
                       content: "Monday - Friday: 9:00 AM - 6:00 PM",
                       description: "Saturday: 10:00 AM - 4:00 PM",
-                      bgColor: "bg-orange-100",
-                      iconColor: "text-orange-600"
+                      bgColor: "bg-teal-100",
+                      iconColor: "text-teal-600"
                     }
                   ].map((item, index) => (
                     <motion.div

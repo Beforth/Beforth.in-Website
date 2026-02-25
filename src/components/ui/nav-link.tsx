@@ -34,7 +34,7 @@ export function NavLink({ to, children, className = "", initial, animate, transi
       {/* Subtle active indicator */}
       {isActive && (
         <motion.div
-          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-teal-600 rounded-full"
           layoutId="activeNav"
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
         />

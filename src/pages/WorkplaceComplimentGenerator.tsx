@@ -658,7 +658,7 @@ const WorkplaceComplimentGenerator: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-8 mb-6 min-h-[200px] flex items-center justify-center relative overflow-hidden">
+                <div className="bg-teal-600 rounded-lg p-8 mb-6 min-h-[200px] flex items-center justify-center relative overflow-hidden">
                   {/* Background decoration */}
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-4 left-4 w-8 h-8 border-2 border-white rounded-full"></div>

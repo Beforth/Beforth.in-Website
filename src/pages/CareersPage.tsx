@@ -57,7 +57,7 @@ const companyValues = [
   {
     title: "Innovation",
     description: "We encourage creative thinking and embrace new technologies to solve complex business problems.",
-    icon: <DoodleIcon name="interface/zap.svg" className="w-8 h-8 text-blue-500" />
+    icon: <DoodleIcon name="interface/zap.svg" className="w-8 h-8 text-teal-500" />
   },
   {
     title: "Collaboration",
@@ -67,12 +67,12 @@ const companyValues = [
   {
     title: "Growth",
     description: "We invest in our team's professional development and provide opportunities for career advancement.",
-    icon: <DoodleIcon name="finance/trend-up.svg" className="w-8 h-8 text-purple-500" />
+    icon: <DoodleIcon name="finance/trend-up.svg" className="w-8 h-8 text-teal-500" />
   },
   {
     title: "Work-Life Balance",
     description: "We support flexible work arrangements and prioritize our team's well-being.",
-    icon: <DoodleIcon name="interface/heart.svg" className="w-8 h-8 text-pink-500" />
+    icon: <DoodleIcon name="interface/heart.svg" className="w-8 h-8 text-teal-500" />
   }
 ];
 
@@ -165,13 +165,12 @@ function CareersPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/20 overflow-hidden">
+        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -182,7 +181,7 @@ function CareersPage() {
               transition={{ duration: 0.8 }}
             >
               Join our <br />
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">team.</span>
+              <span className="font-semibold text-teal-600">team.</span>
             </motion.h1>
             
             <motion.p 
@@ -222,7 +221,7 @@ function CareersPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
-                Our <span className="font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Culture</span>
+                Our <span className="font-semibold text-teal-600">Culture</span>
               </h2>
               <p className="text-lg sm:text-xl font-light text-muted-foreground leading-relaxed">
                 What makes Beforth a great place to work
@@ -261,7 +260,7 @@ function CareersPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
-                Open <span className="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Positions</span>
+                Open <span className="font-semibold text-teal-600">Positions</span>
               </h2>
               <p className="text-lg sm:text-xl font-light text-muted-foreground leading-relaxed">
                 Find your next career opportunity with us
@@ -378,7 +377,7 @@ function CareersPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
-                Apply <span className="font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Now</span>
+                Apply <span className="font-semibold text-teal-600">Now</span>
               </h2>
               <p className="text-lg sm:text-xl font-light text-muted-foreground leading-relaxed">
                 Ready to join our team? Send us your application

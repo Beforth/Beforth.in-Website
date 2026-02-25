@@ -87,7 +87,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, ser
                   {/* Benefits */}
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center">
-                      <BarChart3 className="h-5 w-5 text-blue-500 mr-2" />
+                      <BarChart3 className="h-5 w-5 text-teal-500 mr-2" />
                       Benefits
                     </h3>
                     <ul className="space-y-3">
@@ -99,7 +99,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, ser
                           transition={{ delay: index * 0.1 + 0.2 }}
                           className="flex items-start space-x-3"
                         >
-                          <ArrowRight className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
+                          <ArrowRight className="h-4 w-4 text-teal-500 mt-1 flex-shrink-0" />
                           <span className="text-muted-foreground">{benefit}</span>
                         </motion.li>
                       ))}
@@ -110,7 +110,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, ser
                 {/* Implementation Process */}
                 <div className="mt-8">
                   <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
-                    <Zap className="h-5 w-5 text-purple-500 mr-2" />
+                    <Zap className="h-5 w-5 text-teal-500 mr-2" />
                     Implementation Process
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

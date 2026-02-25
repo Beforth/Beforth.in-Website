@@ -22,21 +22,21 @@ const teamMembers = [
     name: "Vivek Zope",
     role: "CEO",
     bio: "Manages all the things with visionary leadership and strategic direction.",
-    image: "https://ui-avatars.com/api/?name=Vivek+Zope&size=200&background=3b82f6&color=fff&bold=true&format=svg",
+    image: "https://ui-avatars.com/api/?name=Vivek+Zope&size=200&background=0d9488&color=fff&bold=true&format=svg",
     email: "vivek.zope@beforth.in"
   },
   {
     name: "Ritesh Mahale",
     role: "CTO",
     bio: "Expert in Backend Development and system architecture with deep technical expertise.",
-    image: "https://ui-avatars.com/api/?name=Ritesh+Mahale&size=200&background=6366f1&color=fff&bold=true&format=svg",
+    image: "https://ui-avatars.com/api/?name=Ritesh+Mahale&size=200&background=0d9488&color=fff&bold=true&format=svg",
     email: "ritesh.mahale@beforth.in"
   },
   {
     name: "Aditya Badgujar",
     role: "COO",
     bio: "Research and Development expert specializing in Frontend & UI innovation.",
-    image: "https://ui-avatars.com/api/?name=Aditya+Badgujar&size=200&background=8b5cf6&color=fff&bold=true&format=svg",
+    image: "https://ui-avatars.com/api/?name=Aditya+Badgujar&size=200&background=0d9488&color=fff&bold=true&format=svg",
     email: "aditya.badgujar@beforth.in"
   },
 ];
@@ -83,13 +83,12 @@ function TeamPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-background via-blue-50/30 to-purple-50/20 overflow-hidden">
+        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -100,7 +99,7 @@ function TeamPage() {
               transition={{ duration: 0.8 }}
             >
               Our <br />
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Team.</span>
+              <span className="font-semibold text-teal-600">Team.</span>
             </motion.h1>
             
             <motion.p 

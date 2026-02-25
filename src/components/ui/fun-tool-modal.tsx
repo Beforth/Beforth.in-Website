@@ -130,7 +130,7 @@ export function FunToolModal({ isOpen, onClose, type }: FunToolModalProps) {
               <div className="text-center">
                 <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6 pr-8">{getTitle()}</h2>
                 
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 sm:p-6 mb-4 sm:mb-6 min-h-[120px] sm:min-h-[150px] flex items-center justify-center">
+                <div className="bg-stone-100 rounded-xl p-4 sm:p-6 mb-4 sm:mb-6 min-h-[120px] sm:min-h-[150px] flex items-center justify-center">
                   {type === 'badge' ? (
                     <div className="text-center">
                       <div className="text-3xl sm:text-4xl mb-2">🏆</div>

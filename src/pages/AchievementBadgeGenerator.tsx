@@ -266,7 +266,7 @@ function AchievementBadgeGenerator() {
               transition={{ duration: 0.8 }}
             >
               Achievement <br />
-              <span className="font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">Badge Generator</span>
+              <span className="font-semibold text-teal-600">Badge Generator</span>
             </motion.h1>
             
             <motion.p 
@@ -418,7 +418,7 @@ function AchievementBadgeGenerator() {
                       </div>
                     </div>
                   ) : (
-                    <div className="w-80 h-80 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl">
+                    <div className="w-80 h-80 rounded-2xl bg-teal-600 flex items-center justify-center shadow-2xl">
                       <div className="text-center text-white">
                         <Award className="w-16 h-16 mx-auto mb-4 opacity-50" />
                         <p className="text-lg font-medium">Generate your badge</p>

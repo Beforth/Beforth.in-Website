@@ -219,7 +219,7 @@ function BlogPage() {
               transition={{ duration: 0.8 }}
             >
               Blog & <br />
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">News</span>
+              <span className="font-semibold text-teal-600">News</span>
             </motion.h1>
             
             <motion.p 

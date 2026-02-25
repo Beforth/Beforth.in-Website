@@ -68,13 +68,12 @@ function AboutPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-gradient-to-br from-background via-indigo-50/30 to-cyan-50/20 overflow-hidden">
+        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-indigo-500/5 to-cyan-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -85,7 +84,7 @@ function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               About <br />
-              <span className="font-semibold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">Beforth.</span>
+              <span className="font-semibold text-teal-600">Beforth.</span>
             </motion.h1>
             
             <motion.p 
@@ -94,9 +93,9 @@ function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              We're a forward-thinking startup specializing in HRMS and CRM implementations. 
-              Our team combines deep technical expertise with industry knowledge to deliver open-source 
-              solutions that provide exceptional value without the enterprise licensing costs.
+              We transform traditional business operations into structured, efficient digital systems. 
+              Paper ledgers become dashboards. Manual entries become records. Confusing workflows become streamlined processes. 
+              We work across pharma, salons, wholesalers, and more—adaptable, process-focused, and built for the long term.
             </motion.p>
           </div>
         </section>
@@ -108,17 +107,15 @@ function AboutPage() {
               {[
                 {
                   title: "Our Mission",
-                  description: "To democratize enterprise-grade HR and CRM solutions through modern technology, making them accessible and affordable for businesses of all sizes.",
-                  gradient: "from-blue-600 to-purple-600",
+                  description: "To take businesses still working on paper, registers, and manual calculations—and convert those processes into structured digital systems that reduce error, increase visibility, and create control.",
                   icon: "interface/target.svg",
-                  iconColor: "text-blue-600"
+                  iconColor: "text-teal-600"
                 },
                 {
                   title: "Our Vision",
-                  description: "To become the leading implementation partner, known for innovation, cost-effectiveness, and exceptional client success in HR and CRM transformations.",
-                  gradient: "from-green-600 to-blue-600",
+                  description: "To be the bridge between traditional business thinking and modern digital execution—practical, process-focused, and reliable. Helping businesses scale with clarity and control.",
                   icon: "interface/bulb.svg",
-                  iconColor: "text-green-600"
+                  iconColor: "text-teal-600"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -131,7 +128,7 @@ function AboutPage() {
                 >
                   <div className="flex items-center mb-4 md:mb-6">
                     <DoodleIcon name={item.icon} className={`w-10 h-10 md:w-12 md:h-12 ${item.iconColor} mr-4`} />
-                    <h4 className={`text-2xl md:text-3xl font-semibold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                    <h4 className="text-2xl md:text-3xl font-semibold text-teal-600">
                       {item.title}
                     </h4>
                   </div>
@@ -155,44 +152,44 @@ function AboutPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-6 md:mb-8">
-                Our <span className="font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Values</span>
+                Our <span className="font-semibold text-teal-600">Values</span>
               </h2>
               <p className="text-lg sm:text-xl font-light text-muted-foreground leading-relaxed">
-                The principles that guide everything we do
+                Practical, process-focused, and built for the long term
               </p>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Innovation",
-                  description: "We constantly explore new ways to create cutting-edge solutions for our clients.",
-                  icon: <DoodleIcon name="finance/trend-up.svg" className="w-8 h-8 text-blue-500" />
+                  title: "Process-Focused",
+                  description: "We understand workflows, not just code. We adapt systems to your business logic—pharma, salons, wholesale, and more.",
+                  icon: <DoodleIcon name="finance/trend-up.svg" className="w-8 h-8 text-teal-500" />
                 },
                 {
-                  title: "Transparency",
-                  description: "Open communication and honest pricing. No hidden costs or surprises in our implementations.",
-                  icon: <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-green-500" />
+                  title: "Clarity & Control",
+                  description: "We're not selling software—we're selling clarity in operations, control over inventory, and accurate data you can trust.",
+                  icon: <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-teal-500" />
                 },
                 {
-                  title: "Excellence",
-                  description: "We deliver high-quality solutions that exceed expectations and drive real business value.",
-                  icon: <DoodleIcon name="interface/trophy.svg" className="w-8 h-8 text-purple-500" />
+                  title: "Adaptable",
+                  description: "We customize instead of forcing a fixed product. Your systems become the backbone of your operations.",
+                  icon: <DoodleIcon name="interface/trophy.svg" className="w-8 h-8 text-teal-500" />
                 },
                 {
-                  title: "Partnership",
-                  description: "We work closely with our clients as partners, not just vendors, in their digital transformation journey.",
-                  icon: <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-orange-500" />
+                  title: "Bridge the Gap",
+                  description: "Many business owners understand their process but not technology. We sit between traditional thinking and modern execution.",
+                  icon: <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-teal-500" />
                 },
                 {
-                  title: "Accessibility",
-                  description: "Making enterprise-grade solutions accessible to businesses of all sizes through open-source technology.",
-                  icon: <DoodleIcon name="interface/globe.svg" className="w-8 h-8 text-cyan-500" />
+                  title: "Reliable",
+                  description: "Practical, not flashy. Process-focused, not trend-focused. We build systems that last.",
+                  icon: <DoodleIcon name="interface/globe.svg" className="w-8 h-8 text-teal-500" />
                 },
                 {
-                  title: "Support",
-                  description: "Comprehensive training and ongoing support to ensure our clients succeed with their new systems.",
-                  icon: <DoodleIcon name="interface/headphone.svg" className="w-8 h-8 text-pink-500" />
+                  title: "Long-Term",
+                  description: "Scalable and future-proof. We're in it for the long run with training and support that keeps you running.",
+                  icon: <DoodleIcon name="interface/headphone.svg" className="w-8 h-8 text-teal-500" />
                 }
               ].map((value, index) => (
                 <motion.div
@@ -219,9 +216,9 @@ function AboutPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-16 text-center">
               {[
-                { number: "50+", label: "Projects Completed", color: "text-blue-600" },
+                { number: "50+", label: "Projects Completed", color: "text-teal-600" },
                 { number: "95%", label: "Client Satisfaction", color: "text-green-600" },
-                { number: "3+", label: "Years Experience", color: "text-purple-600" }
+                { number: "3+", label: "Years Experience", color: "text-teal-600" }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

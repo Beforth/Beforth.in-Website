@@ -320,7 +320,7 @@ function OfficeQuoteGenerator() {
               transition={{ duration: 0.8 }}
             >
               Office <br />
-              <span className="font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Quote Generator</span>
+              <span className="font-semibold text-teal-600">Quote Generator</span>
             </motion.h1>
             
             <motion.p 
@@ -456,7 +456,7 @@ function OfficeQuoteGenerator() {
                       </div>
                     </motion.div>
                   ) : (
-                    <div className="p-8 rounded-2xl text-center shadow-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700">
+                    <div className="p-8 rounded-2xl text-center shadow-2xl bg-stone-100 dark:bg-stone-800">
                       <Quote className="w-12 h-12 text-muted-foreground mb-4 mx-auto" />
                       <p className="text-muted-foreground text-lg">
                         Click "Generate Quote" to create your first quote
