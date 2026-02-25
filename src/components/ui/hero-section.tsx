@@ -2,19 +2,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from './button';
 import { HeroTransformation } from './hero-transformation';
-import Threads from '../bg/Threads';
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[180vh] py-12 md:py-20">
-      {/* Threads: full top section bg, behind content */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 w-full" style={{ height: '600px' }}>
-        <Threads
-          amplitude={1}
-          distance={0}
-          enableMouseInteraction
-        />
-      </div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero: Clean acme.ai-style layout */}
         <div className="relative text-center mb-12 md:mb-16">
