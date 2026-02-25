@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from './button';
 import { HeroTransformation } from './hero-transformation';
+import LightweightThreads from '../bg/LightweightThreads';
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[180vh] py-12 md:py-20">
+      <LightweightThreads />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero: Clean acme.ai-style layout */}
         <div className="relative text-center mb-12 md:mb-16">
