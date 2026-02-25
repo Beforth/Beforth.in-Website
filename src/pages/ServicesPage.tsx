@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { DoodleIcon } from '../components/ui/doodle-icon';
-import { BentoGrid, BentoGridItem } from '../components/ui/bento-grid';
+import { SolutionSection } from '../components/home-sections/solution-section';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
-import { ServiceModal } from '../components/ui/service-modal';
 import { Logo } from '../components/ui/logo';
 import { NavLink } from '../components/ui/nav-link';
 import { Footer } from '../components/ui/footer';
@@ -21,203 +18,13 @@ const navItems = [
   { name: "Contact", link: "/contact" },
 ];
 
-const services = [
-  {
-    id: 'hrms-implementation',
-    title: "HRMS Implementation",
-    description: "Comprehensive HRMS solution with extensive features for complete workforce management, like our implementation for Aureole Group.",
-    icon: <DoodleIcon name="interface/user.svg" className="h-8 w-8" />,
-    className: "md:col-span-2",
-    demoUrl: "https://hrms.aureolegroup.com/login",
-    header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-teal-500/10"></div>
-        <div className="absolute top-4 right-4 w-16 h-16 bg-teal-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-2 left-4 w-12 h-12 bg-teal-500/20 rounded-full blur-lg"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-teal-500/40" />
-        </div>
-        <div className="absolute inset-0 bg-teal-500/5"></div>
-      </div>
-    ),
-    features: [
-      "Employee Records Management with personal, job, and document data",
-      "Attendance & Leave Management with automated tracking and approvals",
-      "Shift & Roster Management for complex scheduling needs",
-      "Comprehensive Payroll with salary structures, tax calculations, PF/ESI",
-      "Performance Management with appraisals, goals, and feedback systems",
-      "Recruitment Module with job postings, applications, and interview scheduling",
-      "Employee Self-Service Portal for leave applications and payslip access",
-      "Expense Management and reimbursement tracking",
-      "Advanced HR Reports and Analytics for data-driven decisions"
-    ],
-    benefits: [
-      "Streamline HR operations and reduce manual work",
-      "Ensure compliance with labor laws and regulations",
-      "Improve employee satisfaction with self-service capabilities",
-      "Real-time visibility into workforce analytics and trends",
-      "Automated payroll processing with accuracy",
-      "Enhanced recruitment efficiency with automated workflows"
-    ],
-    process: [
-      "Requirements Analysis & System Planning",
-      "Custom Configuration & Data Migration",
-      "User Training & Change Management",
-      "Go-Live Support & Optimization"
-    ]
-  },
-  {
-    id: '4form-crm',
-    title: "4form CRM",
-    description: "Simple and effective CRM with mass email capabilities and built-in form/data collection support.",
-    icon: <DoodleIcon name="interface/analytics.svg" className="h-8 w-8" />,
-    demoUrl: "https://4form.beforth.in/",
-    header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-teal-500/10"></div>
-        <div className="absolute top-3 right-6 w-20 h-20 bg-teal-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-4 left-2 w-14 h-14 bg-teal-500/20 rounded-full blur-lg"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/analytics.svg" className="w-8 h-8 text-teal-500/40" />
-        </div>
-        <div className="absolute inset-0 bg-teal-500/5"></div>
-        <div className="absolute top-2 left-2 w-2 h-2 bg-teal-400/60 rounded-full"></div>
-        <div className="absolute bottom-3 right-3 w-1 h-1 bg-teal-400/60 rounded-full"></div>
-      </div>
-    ),
-    features: [
-      "Lead & Contact Management with easy organization and tracking",
-      "Mass Email Campaigns with templates and scheduling",
-      "Built-in Form Builder for custom data collection",
-      "Data Collection & Analytics with real-time insights",
-      "Customer Pipeline Tracking with visual dashboards",
-      "Email Integration for seamless communication",
-      "Automated follow-ups and reminders",
-      "Mobile-friendly interface for teams on the go",
-      "Export and reporting capabilities"
-    ],
-    benefits: [
-      "Simple, intuitive interface that's easy to learn",
-      "Powerful mass email features to reach customers at scale",
-      "Easy data collection through customizable forms",
-      "Increase response rates with automated follow-ups",
-      "Better customer engagement and retention",
-      "Cost-effective solution for growing businesses"
-    ],
-    process: [
-      "Account Setup & Configuration",
-      "Form & Email Template Design",
-      "Team Onboarding & Training",
-      "Campaign Launch & Monitoring"
-    ]
-  },
-  {
-    id: 'integration',
-    title: "Custom Integration Services",
-    description: "Integrate our HRMS and CRM solutions with your existing business systems for seamless operations.",
-    icon: <DoodleIcon name="interface/shield.svg" className="h-8 w-8" />,
-    header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-teal-500/10"></div>
-        <div className="absolute top-2 right-2 w-24 h-24 bg-teal-500/20 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-1 left-1 w-16 h-16 bg-teal-500/20 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/shield.svg" className="w-8 h-8 text-teal-500/40" />
-        </div>
-        <div className="absolute inset-0 bg-teal-500/5"></div>
-        <div className="absolute top-4 left-4 w-1 h-8 bg-teal-400/30 rounded-full transform rotate-45"></div>
-        <div className="absolute bottom-4 right-4 w-1 h-6 bg-teal-400/30 rounded-full transform -rotate-45"></div>
-      </div>
-    ),
-    features: [
-      "API-based integration with existing ERP, accounting, and business systems",
-      "Real-time data synchronization between systems",
-      "Custom connector development for legacy systems",
-      "Single Sign-On (SSO) implementation",
-      "Data mapping and transformation for consistent information flow",
-      "Automated backup and disaster recovery setup",
-      "Security protocols and access control implementation",
-      "Integration monitoring and error handling"
-    ],
-    benefits: [
-      "Eliminate data silos and manual data entry",
-      "Reduce errors and improve data accuracy",
-      "Streamline workflows across all business systems",
-      "Enable real-time reporting and analytics",
-      "Maintain data consistency across platforms",
-      "Reduce IT maintenance overhead"
-    ],
-    process: [
-      "System Audit & Integration Planning",
-      "API Development & Testing",
-      "Data Migration & Validation",
-      "Go-Live & Monitoring Setup"
-    ]
-  },
-  {
-    id: 'support',
-    title: "Training & Support",
-    description: "Complete training and 24/7 support to ensure your team gets the most out of our solutions.",
-    icon: <DoodleIcon name="interface/clock.svg" className="h-8 w-8" />,
-    className: "md:col-span-2",
-    header: (
-      <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-stone-100 dark:bg-stone-900/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-teal-500/10"></div>
-        <div className="absolute top-1 right-1 w-28 h-28 bg-teal-500/20 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-2 left-3 w-18 h-18 bg-teal-500/20 rounded-full blur-xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <DoodleIcon name="interface/clock.svg" className="w-8 h-8 text-teal-500/40" />
-        </div>
-        <div className="absolute inset-0 bg-teal-500/5"></div>
-        <div className="absolute top-3 left-6 w-3 h-3 bg-teal-400/50 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-5 right-6 w-2 h-2 bg-teal-400/50 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-6 right-8 w-1 h-1 bg-teal-300/60 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-      </div>
-    ),
-    features: [
-      "Comprehensive user training programs for all features",
-      "Role-based training sessions for different user groups",
-      "Interactive workshops and hands-on practice",
-      "Custom training materials and documentation",
-      "24/7 technical support via email, chat, and phone",
-      "Regular system health checks and optimization",
-      "Knowledge base and video tutorials",
-      "Dedicated support team for enterprise clients"
-    ],
-    benefits: [
-      "Achieve high user adoption rates quickly",
-      "Reduce support dependency through proper training",
-      "Maximize ROI through effective system utilization",
-      "Ensure business continuity with reliable support",
-      "Build internal expertise for long-term success",
-      "Stay updated with latest features and best practices"
-    ],
-    process: [
-      "Training Needs Assessment",
-      "Customized Training Program Development",
-      "Training Delivery & Certification",
-      "Ongoing Support & Knowledge Transfer"
-    ]
-  }
-];
-
 function ServicesPage() {
-  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
-
-  const handleServiceClick = (service: typeof services[0]) => {
-    setSelectedService(service);
-  };
-
-  const closeModal = () => {
-    setSelectedService(null);
-  };
-
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="min-h-screen bg-background">
         {/* Header */}
         <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-40">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <motion.div 
                 className="flex items-center"
@@ -251,7 +58,9 @@ function ServicesPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Button size="sm">Get Started</Button>
+                  <Button size="sm" asChild>
+                    <a href="/contact">Get Started</a>
+                  </Button>
                 </motion.div>
               </div>
 
@@ -309,32 +118,8 @@ function ServicesPage() {
           </div>
         </section>
 
-        {/* Services Grid Section */}
-        <section className="py-20 md:py-24 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="max-w-7xl"
-            >
-              <BentoGrid className="grid-cols-1 md:grid-cols-3 gap-4 mx-auto">
-                {services.map((item, i) => (
-                  <BentoGridItem
-                    key={i}
-                    title={item.title}
-                    description={item.description}
-                    header={item.header}
-                    icon={item.icon}
-                    className={item.className || ""}
-                    onClick={() => handleServiceClick(item)}
-                  />
-                ))}
-              </BentoGrid>
-            </motion.div>
-          </div>
-        </section>
+        {/* Solution Section - Bento grid with 4 cards, dashboard on hover */}
+        <SolutionSection />
 
         {/* Why Choose Us Section */}
         <section className="py-20 md:py-24 bg-background">
@@ -472,15 +257,6 @@ function ServicesPage() {
         </section>
 
         <Footer />
-
-        {/* Service Modal */}
-        {selectedService && (
-          <ServiceModal
-            isOpen={!!selectedService}
-            onClose={closeModal}
-            service={selectedService}
-          />
-        )}
       </div>
     </ThemeProvider>
   );
