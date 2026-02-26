@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Play } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { SolutionSection } from '../components/home-sections/solution-section';
+import { ServicesHeroSection } from '../components/services/ServicesHeroSection';
 import { MobileMenu } from '../components/ui/mobile-menu';
 import { ThemeProvider } from '../components/ui/theme-provider';
 import { Logo } from '../components/ui/logo';
@@ -70,59 +70,14 @@ function ServicesPage() {
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
-          {/* Background Decorative Elements */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
-          </div>
+        {/* Hero - stone-50, matches home hero */}
+        <ServicesHeroSection />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <motion.h1 
-              className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light text-foreground leading-none tracking-tight mb-8 md:mb-10"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Our <br />
-              <span className="font-semibold text-teal-600">services.</span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-lg sm:text-xl md:text-2xl font-light text-muted-foreground max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed px-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              ERP and custom software—HRMS, CRM, integrations—adapted to your industry. We turn paper and manual processes into structured digital systems.
-            </motion.p>
-            
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center px-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Button size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl" asChild>
-                <a href="https://hrms.aureolegroup.com/login" target="_blank" rel="noopener noreferrer">Try HRMS Demo</a>
-              </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-                <a href="https://4form.beforth.in/" target="_blank" rel="noopener noreferrer">
-                  <Play className="w-4 h-4 mr-2" />
-                  Try 4form CRM
-                </a>
-              </Button>
-            </motion.div>
-          </div>
-        </section>
+        {/* Solution - bg-background for contrast with hero */}
+        <SolutionSection variant="background" bordered />
 
-        {/* Solution Section - Bento grid with 4 cards, dashboard on hover */}
-        <SolutionSection />
-
-        {/* Why Choose Us Section */}
-        <section className="py-20 md:py-24 bg-background">
+        {/* Why Choose Us - stone-50 for contrast */}
+        <section className="py-20 md:py-24 bg-stone-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <motion.div
@@ -131,9 +86,10 @@ function ServicesPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-foreground mb-8 md:mb-12 leading-tight">
+                <p className="text-sm font-medium text-teal-600 uppercase tracking-wider mb-4">Why choose us</p>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-8 md:mb-12 leading-tight">
                   Why choose<br />
-                  <span className="font-semibold text-teal-600">Beforth?</span>
+                  <span className="text-teal-600">Beforth?</span>
                 </h2>
                 <div className="space-y-8 md:space-y-10">
                   {[
@@ -188,8 +144,8 @@ function ServicesPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        {/* Stats - bg-background, bordered like TrustedBy */}
+        <section className="py-16 md:py-20 bg-background border-y border-stone-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-16 text-center">
               {[
@@ -212,11 +168,11 @@ function ServicesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+        {/* CTA - teal-600, matches home FinalCta */}
+        <section className="py-20 md:py-24 bg-teal-600 text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <motion.h2 
-              className="text-4xl sm:text-5xl md:text-6xl font-light mb-6 md:mb-8 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -227,7 +183,7 @@ function ServicesPage() {
             </motion.h2>
             
             <motion.p 
-              className="text-lg sm:text-xl font-light text-primary-foreground/80 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg sm:text-xl font-light text-teal-100 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -244,13 +200,11 @@ function ServicesPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                Schedule Free Consultation
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-stone-900 hover:bg-stone-100" asChild>
+                <a href="/contact">Schedule Free Consultation</a>
               </Button>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                <a href="/contact" className="flex items-center">
-                  Contact Us
-                </a>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-stone-900" asChild>
+                <a href="/contact">Contact Us</a>
               </Button>
             </motion.div>
           </div>

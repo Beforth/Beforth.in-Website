@@ -3,125 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stacked Dashboard UI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Service Overview | Architectural Design</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #020617; color: white; overflow-x: hidden; }
-        /* This ensures the dashboards sit on top of each other */
-        .dashboard-stack {
-            position: sticky;
-            top: 15%; /* Adjust where it sits on the screen */
-            height: 70vh;
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        /* The "Still Life" Container */
+        .composition-container {
+            position: relative;
+            height: 500px;
             width: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
-        .card {
+
+        /* Fragment 1: The Dashboard Slice */
+        .comp-dashboard {
             position: absolute;
-            width: 90%;
-            max-width: 1100px;
-            height: 100%;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 -20px 40px rgba(0,0,0,0.8);
+            width: 320px;
+            height: 220px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f1f5f9;
+            z-index: 2;
+            padding: 20px;
+            transform: rotate(-5deg);
         }
+
+        /* Fragment 2: The Mobile Device */
+        .comp-mobile {
+            position: absolute;
+            width: 160px;
+            height: 320px;
+            background: #111;
+            border-radius: 30px;
+            border: 6px solid #111;
+            box-shadow: 20px 40px 60px rgba(0,0,0,0.1);
+            z-index: 4;
+            left: 10%;
+            top: 10%;
+            transform: rotate(5deg);
+            overflow: hidden;
+        }
+
+        /* Fragment 3: The Integration Node */
+        .comp-integration {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #3b82f6;
+            border-radius: 50%;
+            z-index: 1;
+            right: 15%;
+            bottom: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            filter: blur(40px);
+            opacity: 0.15;
+        }
+
+        .bar { height: 8px; border-radius: 4px; background: #f1f5f9; margin-bottom: 12px; }
+        .bar-active { background: #3b82f6; width: 60%; }
     </style>
 </head>
 <body>
 
-    <div class="fixed top-20 w-full text-center z-0">
-        <h1 class="text-6xl font-black mb-4">Command Center</h1>
-        <p class="text-slate-400 text-lg">Scroll to layer your data modules.</p>
-    </div>
-
-    <div class="relative pt-[30vh]">
-        
-        <div class="dashboard-stack z-10">
-            <div id="card-1" class="card bg-slate-900 flex items-center justify-center border-blue-500/30">
-                <div class="text-center">
-                    <p class="text-blue-500 font-mono mb-2">PRIMARY_INTERFACE</p>
-                    <h2 class="text-3xl font-bold text-white">Main Dashboard</h2>
+    <main class="min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            
+            <div class="text-side">
+                <h2 class="text-blue-600 font-medium tracking-tight mb-6">Overview</h2>
+                <h1 class="text-6xl font-light mb-8 leading-[1.1]">
+                    Custom <span class="font-bold">Software</span> <br/> 
+                    & Pure <span class="italic">Integrations.</span>
+                </h1>
+                <p class="text-xl text-slate-500 leading-relaxed max-w-md mb-10">
+                    We don't just build features; we compose digital ecosystems. From high-fidelity mobile apps to complex data dashboards.
+                </p>
+                <div class="flex gap-6 text-sm font-semibold uppercase tracking-widest text-slate-400">
+                    <span>Mobile</span>
+                    <span>•</span>
+                    <span>Dashboard</span>
+                    <span>•</span>
+                    <span>Web</span>
                 </div>
             </div>
-        </div>
 
-        <div class="h-screen"></div>
+            <div class="composition-container">
+                <div class="comp-integration"></div>
 
-        <div class="dashboard-stack z-20">
-            <div id="card-2" class="card bg-slate-800 flex items-center justify-center border-emerald-500/30">
-                <div class="text-center">
-                    <p class="text-emerald-500 font-mono mb-2">ANALYTICS_LAYER</p>
-                    <h2 class="text-3xl font-bold text-white">Live Stats Overlay</h2>
+                <div class="comp-dashboard shadow-element">
+                    <div class="flex gap-2 mb-6">
+                        <div class="w-3 h-3 rounded-full bg-red-100"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-100"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-100"></div>
+                    </div>
+                    <div class="bar bar-active"></div>
+                    <div class="bar w-full"></div>
+                    <div class="bar w-4/5"></div>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="h-16 bg-blue-50 rounded-lg"></div>
+                        <div class="h-16 bg-slate-50 rounded-lg"></div>
+                    </div>
+                </div>
+
+                <div class="comp-mobile shadow-element">
+                    <div class="w-full h-full bg-white p-4">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 mb-6"></div>
+                        <div class="space-y-3">
+                            <div class="h-3 w-full bg-slate-100 rounded"></div>
+                            <div class="h-3 w-5/6 bg-slate-100 rounded"></div>
+                            <div class="h-3 w-2/3 bg-slate-50 rounded"></div>
+                        </div>
+                        <div class="mt-20 h-32 w-full bg-blue-600 rounded-2xl"></div>
+                    </div>
+                </div>
+
+                <div class="absolute right-10 top-20 z-10 p-6 bg-white border border-slate-100 rounded-2xl shadow-xl shadow-element">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-xs font-bold uppercase tracking-wider">Live System</span>
+                    </div>
                 </div>
             </div>
+
         </div>
-
-        <div class="h-screen"></div>
-
-        <div class="dashboard-stack z-30">
-            <div id="card-3" class="card bg-indigo-950 flex items-center justify-center border-purple-500/30">
-                <div class="text-center">
-                    <p class="text-purple-400 font-mono mb-2">AI_REPORTS</p>
-                    <h2 class="text-3xl font-bold text-white">Neural Insights</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="h-[50vh]"></div>
-    </div>
+    </main>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
+        // GSAP Animation Logic
+        window.addEventListener('DOMContentLoaded', () => {
+            const tl = gsap.timeline();
 
-        // 1. Initial Hero Dashboard Animation (Scale & Slide from Bottom)
-        // It starts slightly down and smaller, then expands
-        gsap.fromTo("#card-1", 
-            { y: "50%", scale: 0.85, opacity: 0.5 },
-            { 
-                y: "0%", 
-                scale: 1, 
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: "#card-1",
-                    start: "top bottom", 
-                    end: "top 20%",
-                    scrub: true
-                }
-            }
-        );
+            // Entry Animation
+            tl.from(".text-side > *", {
+                x: -50,
+                opacity: 0,
+                stagger: 0.2,
+                duration: 1,
+                ease: "power3.out"
+            });
 
-        // 2. Card 2 Slides OVER Card 1
-        gsap.fromTo("#card-2", 
-            { y: "100%", scale: 0.9 },
-            { 
-                y: "0%", 
-                scale: 1,
-                scrollTrigger: {
-                    trigger: "#card-2",
-                    start: "top bottom",
-                    end: "top 15%",
-                    scrub: true
-                }
-            }
-        );
+            tl.from(".shadow-element", {
+                scale: 0.8,
+                opacity: 0,
+                stagger: 0.15,
+                duration: 1.2,
+                ease: "expo.out"
+            }, "-=1");
 
-        // 3. Card 3 Slides OVER Card 2
-        gsap.fromTo("#card-3", 
-            { y: "100%", scale: 0.95 },
-            { 
-                y: "0%", 
-                scale: 1,
-                scrollTrigger: {
-                    trigger: "#card-3",
-                    start: "top bottom",
-                    end: "top 15%",
-                    scrub: true
-                }
-            }
-        );
+            // Floating "Still Life" Animation
+            gsap.to(".comp-mobile", {
+                y: 15,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            gsap.to(".comp-dashboard", {
+                y: -15,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            // Parallax effect on mouse move
+            document.addEventListener("mousemove", (e) => {
+                const { clientX, clientY } = e;
+                const xPos = (clientX / window.innerWidth - 0.5) * 30;
+                const yPos = (clientY / window.innerHeight - 0.5) * 30;
+
+                gsap.to(".shadow-element", {
+                    x: (i) => xPos * (i + 1) * 0.5,
+                    y: (i) => yPos * (i + 1) * 0.5,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            });
+        });
     </script>
 </body>
 </html>

@@ -166,9 +166,18 @@ function SolutionCard({
   );
 }
 
-export function SolutionSection() {
+type SolutionSectionProps = {
+  /** Section background: 'stone' (default) or 'background' for alternating sections */
+  variant?: 'stone' | 'background';
+  /** Add border-y for visual separation */
+  bordered?: boolean;
+};
+
+export function SolutionSection({ variant = 'stone', bordered }: SolutionSectionProps) {
+  const sectionBg = variant === 'background' ? 'bg-background' : 'bg-stone-50';
+  const borderClass = bordered ? 'border-y border-stone-200' : '';
   return (
-    <section className="py-20 md:py-28 bg-stone-50">
+    <section className={`py-20 md:py-28 ${sectionBg} ${borderClass}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
