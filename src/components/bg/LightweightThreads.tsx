@@ -6,12 +6,36 @@
 const THREAD_COUNT = 35;
 
 export default function LightweightThreads() {
-  // Generate paths: converge at left (0,50) → spread in middle → converge at right (400,50)
+  // Generate paths: varied bends per thread (1, 2, 3, 4, or 5 bends)
   const threads = Array.from({ length: THREAD_COUNT }, (_, i) => {
     const t = i / (THREAD_COUNT - 1);
-    const y = 8 + t * 84; // spread from y=8 to y=92
+    const amp = 15 + t * 20;
+    const y = 8 + t * 84;
+    const bends = 1 + (i % 5); // 1 to 5 bends per thread
+    let d: string;
+    if (bends === 1) {
+      d = `M 0 50 C 200 50 200 ${y} 400 50`;
+    } else if (bends === 2) {
+      const y1 = 50 - amp;
+      d = `M 0 50 C 100 50 100 ${y1} 200 ${y1} C 300 ${y1} 300 50 400 50`;
+    } else if (bends === 3) {
+      const y1 = 50 - amp;
+      const y2 = 50 + amp * 0.8;
+      d = `M 0 50 C 66 50 66 ${y1} 133 ${y1} C 200 ${y1} 200 ${y2} 267 ${y2} C 334 ${y2} 334 50 400 50`;
+    } else if (bends === 4) {
+      const y1 = 50 - amp;
+      const y2 = 50 + amp * 0.9;
+      const y3 = 50 - amp * 0.7;
+      d = `M 0 50 C 50 50 50 ${y1} 100 ${y1} C 150 ${y1} 150 ${y2} 200 ${y2} C 250 ${y2} 250 ${y3} 300 ${y3} C 350 ${y3} 350 50 400 50`;
+    } else {
+      const y1 = 50 - amp;
+      const y2 = 50 + amp * 0.9;
+      const y3 = 50 - amp * 0.7;
+      const y4 = 50 + amp * 0.6;
+      d = `M 0 50 C 40 50 40 ${y1} 80 ${y1} C 120 ${y1} 120 ${y2} 160 ${y2} C 200 ${y2} 200 ${y3} 240 ${y3} C 280 ${y3} 280 ${y4} 320 ${y4} C 360 ${y4} 360 50 400 50`;
+    }
     return {
-      d: `M 0 50 C 85 50 85 ${y} 200 ${y} C 315 ${y} 315 50 400 50`,
+      d,
       delay: (i * 0.15) % 3,
       duration: 8 + (i % 9) * 1.5,
       dir: i % 2 === 0 ? 1 : -1,
@@ -47,6 +71,7 @@ export default function LightweightThreads() {
             strokeLinecap="round"
             className="animate-thread-drift"
             style={{
+              transformOrigin: '0 50px',
               animationDelay: `${t.delay}s`,
               animationDuration: `${t.duration}s`,
               animationDirection: t.dir === 1 ? 'normal' : 'alternate',

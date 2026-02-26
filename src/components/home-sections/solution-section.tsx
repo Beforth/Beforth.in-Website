@@ -125,7 +125,7 @@ function SolutionCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
-      className={`rounded-2xl group/bento overflow-hidden shadow-input bg-gradient-to-b from-stone-100/80 to-stone-100/80 hover:from-teal-50 hover:to-stone-100/80 border border-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex flex-col ${className || ''}`}
+      className={`rounded-2xl group/bento overflow-hidden shadow-input bg-gradient-to-b from-stone-100/80 to-stone-100/80 hover:from-teal-50/50 hover:to-stone-100/80 border border-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex flex-col ${className || ''}`}
     >
       {/* Text section - top */}
       <div className="p-6 shrink-0">
