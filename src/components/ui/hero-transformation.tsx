@@ -86,7 +86,6 @@ export function HeroTransformation() {
       {/* First sticky stack: Excel - stays in place for overlap */}
       <div className="dashboard-stack z-10">
         <div className="card">
-          <p className="text-sm font-medium text-amber-700 mb-3">Your existing system</p>
           <div className="bg-white rounded-xl border-2 border-stone-200 overflow-hidden min-h-[320px] max-h-[min(500px,68vh)] flex flex-col">
             <div className="bg-stone-100 px-3 py-1.5 sm:px-4 sm:py-2 border-b border-stone-200 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -131,7 +130,6 @@ export function HeroTransformation() {
       {/* Second sticky stack: Dashboard - slides over Excel */}
       <div className="dashboard-stack z-20">
         <div ref={card2Ref} className="card">
-          <p className="text-sm font-medium text-teal-700 mb-3">After: Your system</p>
           <div className="bg-white rounded-xl border-2 border-teal-200 overflow-hidden ring-2 ring-teal-500/20 min-h-[360px] max-h-[min(540px,72vh)] flex flex-col">
             <div className="bg-stone-900 px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-between">
               <span className="text-white font-medium">Business Dashboard</span>
