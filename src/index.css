@@ -136,3 +136,31 @@
   animation: thread-flag-wave 4s ease-in-out infinite;
   transform-origin: left center;
 }
+
+/* How it works - slow spin for integration canvas */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* How it works - scroll snap (only when section is mounted) */
+.how-it-works-snap-active {
+  scroll-snap-type: y proximity;
+}
+.how-it-works-snap-point {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+/* Disable aggressive snap on mobile for smoother scrolling */
+@media (max-width: 1023px) {
+  .how-it-works-snap-active {
+    scroll-snap-type: none;
+  }
+  .how-it-works-snap-point {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+}

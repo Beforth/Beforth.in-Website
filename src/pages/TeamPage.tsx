@@ -47,7 +47,7 @@ function TeamPage() {
       <div className="min-h-screen bg-background">
         {/* Header */}
         <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-40">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <motion.div 
                 className="flex items-center"
@@ -74,7 +74,9 @@ function TeamPage() {
               </nav>
               
               <div className="hidden md:flex items-center space-x-4">
-                <Button size="sm">Get Started</Button>
+                <Button size="sm" asChild>
+                  <a href="/contact">Get Started</a>
+                </Button>
               </div>
 
               <MobileMenu navItems={navItems} />
@@ -86,8 +88,8 @@ function TeamPage() {
         <section className="relative pt-20 pb-24 md:pt-32 md:pb-40 bg-stone-50 overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-3xl"></div>
           </div>
 
@@ -115,8 +117,8 @@ function TeamPage() {
         </section>
 
         {/* Team Grid */}
-        <section className="py-20 md:py-24 bg-muted/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section className="py-20 md:py-24 bg-stone-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
@@ -134,7 +136,7 @@ function TeamPage() {
                       className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                     />
                     <h3 className="text-xl font-semibold text-foreground mb-2">{member.name}</h3>
-                    <p className="text-primary font-medium mb-3">{member.role}</p>
+                    <p className="text-teal-600 font-medium mb-3">{member.role}</p>
                     <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{member.bio}</p>
                     <div className="flex justify-center space-x-2">
                       <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-foreground transition-colors">
@@ -149,10 +151,10 @@ function TeamPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+        <section className="py-20 md:py-24 bg-teal-600 text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <motion.h2 
-              className="text-4xl sm:text-5xl md:text-6xl font-light mb-6 md:mb-8 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -162,7 +164,7 @@ function TeamPage() {
             </motion.h2>
             
             <motion.p 
-              className="text-lg sm:text-xl font-light text-primary-foreground/80 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg sm:text-xl font-light text-teal-100 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -178,15 +180,11 @@ function TeamPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                <a href="/careers" className="flex items-center">
-                  View Open Positions
-                </a>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-stone-900 hover:bg-stone-100" asChild>
+                <a href="/careers">View Open Positions</a>
               </Button>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                <a href="/contact" className="flex items-center">
-                  Get in Touch
-                </a>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-stone-900" asChild>
+                <a href="/contact">Get in Touch</a>
               </Button>
             </motion.div>
           </div>

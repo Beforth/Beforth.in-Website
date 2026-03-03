@@ -82,7 +82,7 @@ function ContactPage() {
       <div className="min-h-screen bg-background">
         {/* Header */}
         <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-40">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <motion.div 
                 className="flex items-center"
@@ -116,7 +116,9 @@ function ContactPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Button size="sm">Get Started</Button>
+                  <Button size="sm" asChild>
+                    <a href="#contact-form">Get Started</a>
+                  </Button>
                 </motion.div>
               </div>
 
@@ -158,7 +160,7 @@ function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="pt-20 md:pt-24 pb-8 bg-background">
+        <section id="contact-form" className="pt-20 md:pt-24 pb-8 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
               {/* Contact Form */}
@@ -242,8 +244,8 @@ function ContactPage() {
                       title: "Call Us",
                       content: "+919766183834",
                       description: "Mon-Fri from 9am to 6pm",
-                      bgColor: "bg-emerald-100",
-                      iconColor: "text-emerald-600"
+                      bgColor: "bg-teal-100",
+                      iconColor: "text-teal-600"
                     },
                     {
                       icon: "interface/location-pin.svg",
@@ -330,20 +332,21 @@ function ContactPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+        <section className="py-20 md:py-24 bg-teal-600 text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <motion.h2 
-              className="text-4xl sm:text-5xl md:text-6xl font-light mb-6 md:mb-8 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Ready to get started?
+              Ready to transform<br />
+              <span className="font-semibold">your business?</span>
             </motion.h2>
             
             <motion.p 
-              className="text-lg sm:text-xl font-light text-primary-foreground/80 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg sm:text-xl font-light text-teal-100 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -360,10 +363,10 @@ function ContactPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
-                <a href="/contact">Contact Us Directly</a>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-stone-900 hover:bg-stone-100" asChild>
+                <a href="#contact-form">Schedule Free Consultation</a>
               </Button>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-stone-900" asChild>
                 <a href="tel:+919766183834">Call Us Now</a>
               </Button>
             </motion.div>

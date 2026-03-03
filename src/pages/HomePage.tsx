@@ -146,13 +146,13 @@ function HomePage() {
 
         <TrustedBy />
 
-        <WhatYouGet />
-
         <ValueDifference />
 
         <YourSystems services={services} onLearnMore={handleServiceClick} />
 
         <HowItWorks />
+
+        <WhatYouGet />
 
         <IndustriesWeServe />
 

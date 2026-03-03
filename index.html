@@ -31,6 +31,15 @@
     </script>
 
     <!--Start of Tawk.to Script-->
+    <!-- Polyfill: Tawk expects i18next for visitor name parsing; provide stub to avoid "i18next is not a function" error -->
+    <script type="text/javascript">
+    (function() {
+      var t = function(k) { return typeof k === 'string' ? k : (k && k[0]) || ''; };
+      if (typeof window.i18next === 'undefined') {
+        window.i18next = Object.assign(t, { t: t, language: 'en' });
+      }
+    })();
+    </script>
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -39,6 +48,7 @@
     s1.src='https://embed.tawk.to/68650fbe28721a190b4017f6/1iv5cb149';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
+    s1.onerror=function(){console.warn('Tawk.to failed to load');};
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>

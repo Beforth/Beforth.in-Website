@@ -1,84 +1,138 @@
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import { motion } from 'framer-motion';
-import { DoodleIcon } from '../ui/doodle-icon';
+import { Zap } from 'lucide-react';
 
-const comparisons = [
+const transformations = [
   {
-    before: 'Paper ledgers, Excel sheets, manual entry',
-    after: 'One dashboard. Real-time. Accurate.',
-    beforeIcon: 'interface/grid.svg',
-    afterIcon: 'interface/analytics.svg',
+    today: 'Today',
+    future: 'The Future',
+    title: 'No more "Where is that file?"',
+    desc: 'Stop hunting through paper ledgers and broken Excel formulas. We replace the manual hunt with one real-time dashboard that actually tells the truth.',
+    visual: 'chaos-order',
   },
   {
-    before: 'Copy-paste between systems. Formulas that break.',
-    after: 'Automated logic. Data flows where it should.',
-    beforeIcon: 'interface/copy.svg',
-    afterIcon: 'misc/automation.svg',
-  },
-  {
-    before: 'Guessing inventory. Missing orders.',
-    after: 'Control. Visibility. Fewer errors.',
-    beforeIcon: 'interface/question.svg',
-    afterIcon: 'interface/shield.svg',
+    today: 'Manual',
+    future: 'Automated',
+    title: 'Stop guessing. Start knowing.',
+    desc: 'Guessing inventory and missing orders is a symptom of disconnected systems. We build the "Digital Glue" that connects your orders to your warehouse automatically.',
+    visual: 'pulse',
   },
 ];
 
 export function ValueDifference() {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const cards = cardRefs.current.filter(Boolean);
+    const cleanups: (() => void)[] = [];
+
+    cards.forEach((card) => {
+      const before = card?.querySelector('.before-elements');
+      const after = card?.querySelector('.after-elements');
+      if (!before || !after) return;
+
+      const onEnter = () => {
+        gsap.to(before, { opacity: 0, x: -20, duration: 0.4 });
+        gsap.to(after, { opacity: 1, x: 0, duration: 0.6, delay: 0.2 });
+      };
+      const onLeave = () => {
+        gsap.to(before, { opacity: 1, x: 0, duration: 0.4 });
+        gsap.to(after, { opacity: 0, x: 20, duration: 0.4 });
+      };
+
+      card?.addEventListener('mouseenter', onEnter);
+      card?.addEventListener('mouseleave', onLeave);
+      cleanups.push(() => {
+        card?.removeEventListener('mouseenter', onEnter);
+        card?.removeEventListener('mouseleave', onLeave);
+      });
+    });
+
+    return () => cleanups.forEach((fn) => fn());
+  }, []);
+
   return (
-    <section className="py-20 md:py-28 bg-stone-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-32 bg-stone-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-            The difference
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            What you have today vs what we build for you
+          <p className="text-teal-600 font-semibold tracking-[0.2em] uppercase text-xs mb-4">
+            Real Impact
           </p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
+            From{' '}
+            <span className="italic text-stone-700">Manual Friction</span>
+            <br />
+            to{' '}
+            <span className="text-teal-600">Digital Flow.</span>
+          </h2>
         </motion.div>
 
-        <div className="space-y-6">
-          {comparisons.map((item, i) => (
+        <div className="grid grid-cols-1 gap-12">
+          {transformations.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              ref={(el) => (cardRefs.current[i] = el)}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="flex flex-col sm:flex-row items-stretch gap-4 sm:gap-6"
+              transition={{ delay: i * 0.1 }}
+              className={`group p-8 md:p-12 flex flex-col gap-12 items-center rounded-[32px] border border-stone-200 bg-white transition-all duration-500 hover:border-teal-200 hover:shadow-xl hover:shadow-teal-500/10 ${
+                i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
+              }`}
             >
-              {/* Before */}
-              <div className="flex-1 flex items-center gap-4 p-5 sm:p-6 rounded-xl bg-white border-2 border-stone-200 shadow-sm">
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center">
-                  <DoodleIcon name={item.beforeIcon} className="w-8 h-8 text-amber-700" />
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="px-3 py-1 bg-stone-100 text-stone-500 rounded-full text-[10px] font-bold uppercase">
+                    {item.today}
+                  </span>
+                  <div className="h-px w-8 bg-stone-200" />
+                  <span className="px-3 py-1 bg-teal-600 text-white rounded-full text-[10px] font-bold uppercase">
+                    {item.future}
+                  </span>
                 </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">Before</p>
-                  <p className="text-foreground font-medium text-sm sm:text-base">{item.before}</p>
-                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
 
-              {/* Arrow */}
-              <div className="flex items-center justify-center flex-shrink-0">
-                <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                  </svg>
-                </div>
-              </div>
-
-              {/* After */}
-              <div className="flex-1 flex items-center gap-4 p-5 sm:p-6 rounded-xl bg-teal-50 border-2 border-teal-200 shadow-sm">
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-teal-100 flex items-center justify-center">
-                  <DoodleIcon name={item.afterIcon} className="w-8 h-8" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-1">After</p>
-                  <p className="text-foreground font-semibold text-sm sm:text-base">{item.after}</p>
-                </div>
+              <div className="w-full md:w-[400px] h-[180px] rounded-2xl overflow-hidden flex items-center justify-center bg-stone-100 border border-stone-200 p-6">
+                {item.visual === 'chaos-order' ? (
+                  <div className="relative w-full h-full bg-[radial-gradient(#e7e5e4_1.5px,transparent_1.5px)] bg-[length:24px_24px]">
+                    <div className="before-elements absolute inset-0">
+                      <div
+                        className="absolute w-10 h-2.5 bg-stone-300 rounded-sm"
+                        style={{ top: '20%', left: '10%', transform: 'rotate(15deg)' }}
+                      />
+                      <div
+                        className="absolute w-10 h-2.5 bg-stone-300 rounded-sm"
+                        style={{ top: '60%', left: '15%', transform: 'rotate(-10deg)' }}
+                      />
+                      <div
+                        className="absolute w-10 h-2.5 bg-stone-300 rounded-sm"
+                        style={{ top: '40%', left: '30%', transform: 'rotate(45deg)' }}
+                      />
+                    </div>
+                    <div className="after-elements absolute inset-0 opacity-0 flex items-center justify-center gap-8">
+                      <div className="w-12 h-3 bg-teal-500 rounded-sm shadow-lg shadow-teal-500/30" />
+                      <div className="w-16 h-px bg-gradient-to-r from-teal-500 to-transparent" />
+                      <div className="w-12 h-3 bg-teal-500 rounded-sm shadow-lg shadow-teal-500/30" />
+                      <div className="w-16 h-px bg-gradient-to-r from-teal-500 to-transparent" />
+                      <div className="w-12 h-3 bg-teal-500 rounded-sm shadow-lg shadow-teal-500/30" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative w-full h-full flex items-center justify-center bg-stone-900 rounded-xl">
+                    <div className="absolute w-12 h-12 rounded-full border-2 border-teal-500/50 animate-ping" />
+                    <div className="w-16 h-16 rounded-2xl bg-teal-500 flex items-center justify-center z-10 shadow-xl shadow-teal-500/40">
+                      <Zap className="text-white w-8 h-8" fill="currentColor" stroke="currentColor" />
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

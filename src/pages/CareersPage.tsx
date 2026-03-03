@@ -62,7 +62,7 @@ const companyValues = [
   {
     title: "Collaboration",
     description: "We believe in the power of teamwork and open communication to achieve our goals.",
-    icon: <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-green-500" />
+    icon: <DoodleIcon name="interface/user.svg" className="w-8 h-8 text-teal-500" />
   },
   {
     title: "Growth",
@@ -129,7 +129,7 @@ function CareersPage() {
       <div className="min-h-screen bg-background">
         {/* Header */}
         <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-40">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <motion.div 
                 className="flex items-center"
@@ -156,7 +156,9 @@ function CareersPage() {
               </nav>
               
               <div className="hidden md:flex items-center space-x-4">
-                <Button size="sm">Get Started</Button>
+                <Button size="sm" asChild>
+                  <a href="/contact">Get Started</a>
+                </Button>
               </div>
 
               <MobileMenu navItems={navItems} />
@@ -200,19 +202,19 @@ function CareersPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <Button size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl">
-                View Open Positions
+              <Button size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl" asChild>
+                <a href="#open-positions">View Open Positions</a>
               </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                Learn About Our Culture
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+                <a href="/about">Learn About Our Culture</a>
               </Button>
             </motion.div>
           </div>
         </section>
 
         {/* Company Values Section */}
-        <section className="py-20 md:py-24 bg-muted/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section className="py-20 md:py-24 bg-stone-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-16 md:mb-20"
               initial={{ opacity: 0, y: 20 }}
@@ -250,8 +252,8 @@ function CareersPage() {
         </section>
 
         {/* Job Openings Section */}
-        <section className="py-20 md:py-24 bg-background">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section id="open-positions" className="py-20 md:py-24 bg-background">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-16 md:mb-20"
               initial={{ opacity: 0, y: 20 }}
@@ -316,7 +318,7 @@ function CareersPage() {
                   
                   {expandedJob === job.id && (
                     <motion.div 
-                      className="border-t border-border p-6 bg-muted/30"
+                      className="border-t border-border p-6 bg-stone-50"
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
@@ -367,7 +369,7 @@ function CareersPage() {
         </section>
 
         {/* Application Form Section */}
-        <section id="application-form" className="py-20 md:py-24 bg-muted/30">
+        <section id="application-form" className="py-20 md:py-24 bg-stone-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <motion.div 
               className="text-center mb-16 md:mb-20"
@@ -474,10 +476,10 @@ function CareersPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+        <section className="py-20 md:py-24 bg-teal-600 text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <motion.h2 
-              className="text-4xl sm:text-5xl md:text-6xl font-light mb-6 md:mb-8 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 md:mb-8 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -487,7 +489,7 @@ function CareersPage() {
             </motion.h2>
             
             <motion.p 
-              className="text-lg sm:text-xl font-light text-primary-foreground/80 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
+              className="text-lg sm:text-xl font-light text-teal-100 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -503,15 +505,11 @@ function CareersPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                <a href="/contact" className="flex items-center">
-                  Get in Touch
-                </a>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-stone-900 hover:bg-stone-100" asChild>
+                <a href="/contact">Get in Touch</a>
               </Button>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
-                <a href="/about" className="flex items-center">
-                  Learn More About Us
-                </a>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-stone-900" asChild>
+                <a href="/about">Learn More About Us</a>
               </Button>
             </motion.div>
           </div>
